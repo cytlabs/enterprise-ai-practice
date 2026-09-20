@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#edf1f6">
+  <meta name="description" content="企业 AI 提效方案与案例展示：从业务问题、服务内容到实施流程与试点合作，让 AI 落地，让企业提效。">
+  <title>让 AI 落地，让企业提效 · 企业 AI 提效方案与案例</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #152944;
+      --blue: #245bdb;
+      --muted: #68768a;
+      --line: #dce4ef;
+      --paper: #ffffff;
+      --canvas: #edf1f6;
+      --display: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+      --body: "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { min-width: 320px; }
+    body { margin: 0; padding: 40px 24px; background: var(--canvas); color: var(--ink); font-family: var(--body); -webkit-font-smoothing: antialiased; }
+    .cover { width: 100%; max-width: 1120px; aspect-ratio: 297 / 210; margin: 0 auto; position: relative; overflow: hidden; background: var(--paper); box-shadow: 0 18px 60px #1529440d, 0 2px 8px #15294405; display: flex; flex-direction: column; padding: 48px 64px 38px; }
+    .cover::before { content: ""; position: absolute; width: 76px; height: 5px; top: 0; left: 64px; background: var(--blue); }
+    .masthead { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .series { display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 600; letter-spacing: 2px; }
+    .series-mark { display: flex; gap: 3px; align-items: flex-end; height: 20px; }
+    .series-mark i { display: block; width: 4px; background: var(--blue); }
+    .series-mark i:nth-child(1) { height: 9px; opacity: .4; }
+    .series-mark i:nth-child(2) { height: 14px; opacity: .65; }
+    .series-mark i:nth-child(3) { height: 20px; }
+    .edition { color: var(--muted); font-size: 10px; letter-spacing: 2px; }
+    .hero { flex: 1; display: flex; align-items: center; position: relative; }
+    .copy { width: 65%; position: relative; z-index: 1; padding-bottom: 10px; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--blue); font-size: 12px; letter-spacing: 3px; margin: 0 0 30px; }
+    .eyebrow::before { content: ""; width: 24px; height: 1px; background: currentColor; }
+    h1 { font-family: var(--display); font-size: clamp(38px, 5.3vw, 64px); font-weight: 700; line-height: 1.38; letter-spacing: -2px; margin: 0; }
+    h1 span { display: block; white-space: nowrap; }
+    h1 .accent { color: var(--blue); }
+    .subtitle { max-width: 440px; margin: 28px 0 0; font-size: 16px; line-height: 1.95; color: var(--muted); letter-spacing: .5px; text-wrap: pretty; }
+    .illustration { position: absolute; width: 52%; right: -62px; top: 50%; transform: translateY(-48%); }
+    .illustration svg { display: block; width: 100%; height: auto; overflow: visible; }
+    .footer { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; border-top: 1px solid var(--line); padding-top: 24px; }
+    .footer-title { margin: 0 0 7px; font-size: 13px; font-weight: 500; letter-spacing: 1px; }
+    .footer-note { margin: 0; font-size: 10px; color: var(--muted); letter-spacing: 1.6px; }
+    .topics { display: flex; align-items: center; gap: 18px; color: var(--muted); font-size: 12px; letter-spacing: 1px; }
+    .topics span + span::before { content: "/"; margin-right: 18px; color: #bcc7d6; }
+    @media (min-width: 1400px) { body { padding-top: 56px; } }
+    @media (max-width: 900px) and (min-width: 641px) {
+      .cover { padding: 34px 40px 28px; }
+      .cover::before { left: 40px; }
+      .eyebrow { margin-bottom: 20px; }
+      .subtitle { font-size: 13px; max-width: 330px; margin-top: 20px; }
+      .illustration { right: -40px; }
+      .footer { padding-top: 18px; }
+      .topics { gap: 10px; font-size: 10px; }
+      .topics span + span::before { margin-right: 10px; }
+    }
+    @media (max-width: 640px) {
+      body { padding: 16px; }
+      .cover { aspect-ratio: auto; min-height: 780px; padding: 30px 26px 26px; }
+      .cover::before { left: 26px; width: 52px; height: 4px; }
+      .series { font-size: 11px; letter-spacing: 1px; gap: 9px; }
+      .edition { display: none; }
+      .hero { display: block; padding-top: 60px; }
+      .copy { width: 100%; padding: 0; }
+      .eyebrow { margin-bottom: 20px; font-size: 10px; }
+      h1 { font-size: clamp(34px, 8.8vw, 52px); letter-spacing: -1.5px; }
+      .subtitle { font-size: 13px; line-height: 1.9; margin-top: 20px; max-width: 340px; }
+      .illustration { position: relative; width: 82%; max-width: 330px; top: auto; right: auto; margin: 0 0 0 auto; transform: none; }
+      .footer { align-items: flex-start; padding-top: 20px; flex-direction: column; gap: 18px; }
+      .footer-title { font-size: 11px; }
+      .footer-note { font-size: 8px; }
+      .topics { font-size: 10px; }
+    }
+    @page { size: A4 landscape; margin: 0; }
+    @media print {
+      html, body { width: 297mm; min-width: 0; margin: 0; padding: 0; background: white; }
+      body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .cover { width: 297mm; height: 210mm; min-height: 0; max-width: none; aspect-ratio: auto; margin: 0; padding: 48px 64px 38px; box-shadow: none; break-inside: avoid; break-after: page; }
+      .cover:last-child { break-after: auto; }
+      h1 { font-size: 64px; }
+    }
+  </style>
+  <style>
+    /* 每个 section 是一张独立文档页面；新增内容沿用此结构。 */
+    .document { display: flex; flex-direction: column; gap: 32px; }
+    .slide { width: 100%; max-width: 1120px; aspect-ratio: 297 / 210; margin: 0 auto; padding: 44px 64px 32px; background: var(--paper); box-shadow: 0 18px 60px #1529440d, 0 2px 8px #15294405; display: flex; flex-direction: column; position: relative; }
+    .page-header { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-bottom: 22px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 11px; letter-spacing: 1.5px; }
+    .page-header strong { color: var(--ink); font-weight: 500; }
+    .page-body { flex: 1; padding: 28px 0 22px; }
+    .kicker { margin: 0 0 10px; font-size: 11px; letter-spacing: 2px; color: var(--blue); }
+    .slide h2 { font-family: var(--display); margin: 0; font-size: 34px; letter-spacing: -1px; font-weight: 650; line-height: 1.4; }
+    .slide h3 { margin: 0; font-size: 18px; line-height: 1.5; font-weight: 600; }
+    .lead { margin: 12px 0 0; max-width: 840px; font-size: 14px; line-height: 1.85; color: var(--muted); }
+    .page-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 17px; border-top: 1px solid var(--line); font-size: 10px; letter-spacing: 1px; color: var(--muted); }
+    .page-number { font-variant-numeric: tabular-nums; color: var(--blue); white-space: nowrap; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+    .space-top { margin-top: 24px; }
+    .panel { padding: 18px 22px; background: #f5f8fd; border: 1px solid #e5ecf7; }
+    .panel p, .plain-item p { margin: 10px 0 0; color: var(--muted); font-size: 13px; line-height: 1.85; }
+    .panel .impact { margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--line); color: var(--blue); font-size: 12px; }
+    .callout { display: flex; gap: 18px; align-items: baseline; margin-top: 20px; padding: 13px 20px; background: #edf3ff; border-left: 3px solid var(--blue); font-size: 13px; line-height: 1.8; color: #446080; }
+    .callout strong { color: var(--blue); flex-shrink: 0; }
+    .small-label { display: block; color: var(--blue); font-size: 10px; letter-spacing: 1.5px; margin-bottom: 12px; }
+    .service { display: grid; grid-template-columns: 38px 1fr; gap: 12px; padding: 14px 0; border-top: 1px solid var(--line); }
+    .service-number { color: #9bb5e3; font-size: 23px; line-height: 1.5; font-weight: 300; }
+    .service p { margin: 8px 0 0; color: var(--muted); font-size: 12px; line-height: 1.75; }
+    .service .deliverable { margin-top: 8px; font-size: 11px; color: var(--blue); }
+    .badge { display: inline-block; margin-left: 12px; padding: 4px 9px; background: #edf3ff; color: var(--blue); font-size: 10px; letter-spacing: .5px; vertical-align: middle; font-weight: 400; }
+    .case-layout { display: grid; grid-template-columns: .85fr 1.4fr; gap: 28px; margin-top: 28px; }
+    .case-brief { padding: 26px; background: var(--ink); color: white; }
+    .case-brief .small-label { color: #abc5ff; }
+    .case-brief h3 { font-size: 24px; }
+    .case-brief p { font-size: 13px; line-height: 1.9; color: #d3dfef; margin: 14px 0 0; }
+    .case-brief dl { margin: 25px 0 0; }
+    .case-brief dl div { border-top: 1px solid #ffffff29; padding: 11px 0; font-size: 12px; line-height: 1.7; }
+    .case-brief dt { color: #a7bdd9; }
+    .case-brief dd { margin: 2px 0 0; }
+    .issue { display: grid; grid-template-columns: 24px 1fr; gap: 13px; padding: 15px 0; border-bottom: 1px solid var(--line); }
+    .issue:first-child { padding-top: 0; }
+    .issue > span { color: var(--blue); font-size: 13px; padding-top: 3px; }
+    .issue h3 { font-size: 16px; }
+    .issue p { margin: 7px 0 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .note { margin: 13px 0 0; color: var(--muted); font-size: 11px; line-height: 1.8; }
+    .flow-row { display: grid; grid-template-columns: 85px 1fr; margin-top: 28px; gap: 20px; align-items: center; }
+    .flow-label { font-size: 13px; color: var(--muted); }
+    .flow-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+    .flow-step { position: relative; background: #f2f5f9; padding: 19px 12px; text-align: center; font-size: 13px; line-height: 1.7; }
+    .flow-step:not(:last-child)::after { content: '→'; position: absolute; right: -16px; top: 50%; transform: translateY(-50%); color: #98a9bf; }
+    .flow-step.highlight { color: var(--blue); background: #eaf1ff; font-weight: 600; }
+    .flow-step small { display: block; font-size: 10px; color: var(--muted); font-weight: 400; margin-top: 4px; }
+    .role-split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; margin-top: 32px; }
+    .plain-item { padding-top: 17px; border-top: 2px solid var(--line); }
+    .plain-item.blue { border-color: var(--blue); }
+    .plain-item h3 { font-size: 16px; }
+    .table-wrap { margin-top: 24px; }
+    table { border-collapse: collapse; width: 100%; font-size: 13px; line-height: 1.7; text-align: left; }
+    th { padding: 11px 16px; background: #edf3ff; color: var(--blue); font-weight: 500; }
+    td { padding: 13px 16px; border-bottom: 1px solid var(--line); color: var(--muted); }
+    td:first-child { color: var(--ink); font-weight: 500; }
+    .pending { color: #7b8da6; font-size: 12px; white-space: nowrap; }
+    .timeline { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; margin-top: 40px; }
+    .stage { border-top: 2px solid #cbdaf4; padding-top: 20px; }
+    .stage-number { color: var(--blue); font-size: 12px; letter-spacing: 2px; display: block; margin-bottom: 17px; }
+    .stage h3 { font-size: 18px; }
+    .stage p { color: var(--muted); font-size: 13px; line-height: 1.85; margin: 12px 0 0; }
+    .stage .stage-result { color: var(--blue); padding-top: 12px; margin-top: 15px; border-top: 1px solid var(--line); font-size: 12px; }
+    .faq { padding: 18px 0; border-top: 1px solid var(--line); }
+    .faq h3 { font-size: 16px; }
+    .faq p { font-size: 13px; line-height: 1.85; color: var(--muted); margin: 9px 0 0; }
+    .evidence { padding: 25px 22px; background: #f5f8fd; min-height: 250px; display: flex; flex-direction: column; }
+    .evidence h3 { font-size: 19px; }
+    .evidence p { font-size: 13px; line-height: 1.9; color: var(--muted); }
+    .evidence .evidence-slot { margin: auto 0 0; padding-top: 17px; border-top: 1px dashed #bdcde3; color: #7b8da6; font-size: 11px; }
+    .pilot-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 30px; }
+    .pilot-focus { background: #edf3ff; padding: 30px; }
+    .pilot-focus .big-word { font-size: 44px; font-weight: 650; color: var(--blue); letter-spacing: -1px; margin: 9px 0 17px; }
+    .pilot-focus p { font-size: 14px; color: #526988; line-height: 1.9; margin: 0; }
+    .check-list { margin: 0; padding: 0; list-style: none; }
+    .check-list li { padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .check-list li:first-child { padding-top: 0; }
+    .check-list strong { display: block; font-size: 15px; font-weight: 500; }
+    .check-list span { display: block; font-size: 12px; color: var(--muted); line-height: 1.8; margin-top: 5px; }
+    .closing .page-body { display: flex; flex-direction: column; justify-content: center; }
+    .closing h2 { font-size: 46px; line-height: 1.5; }
+    .closing h2 em { color: var(--blue); font-style: normal; }
+    .conversation { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 32px; }
+    .conversation p { margin: 0; padding-top: 16px; border-top: 2px solid var(--line); color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .conversation strong { display: block; color: var(--ink); font-size: 15px; font-weight: 500; margin-bottom: 5px; }
+    .contact { margin-top: 38px; padding: 20px 24px; background: #f5f8fd; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .contact strong { font-size: 15px; font-weight: 500; }
+    .contact p { margin: 5px 0 0; font-size: 12px; color: var(--muted); }
+    .contact-placeholder { font-size: 11px; color: var(--muted); border-left: 1px solid var(--line); padding-left: 22px; line-height: 1.8; }
+    @media screen and (max-width: 1000px) {
+      .slide { aspect-ratio: auto; min-height: 680px; padding: 34px 40px 28px; }
+      .slide h2 { font-size: 30px; }
+      .page-body { padding-top: 28px; }
+      .flow-row { grid-template-columns: 65px 1fr; gap: 12px; }
+      .flow-steps { gap: 16px; }
+      .flow-step { font-size: 11px; padding: 16px 7px; }
+      .flow-step:not(:last-child)::after { right: -13px; }
+      .closing h2 { font-size: 40px; }
+    }
+    @media screen and (max-width: 640px) {
+      .document { gap: 20px; }
+      .slide { min-height: 0; padding: 28px 24px 24px; }
+      .page-header { font-size: 9px; letter-spacing: .5px; padding-bottom: 18px; gap: 12px; }
+      .slide h2 { font-size: 27px; letter-spacing: -.5px; }
+      .slide h3 { font-size: 17px; }
+      .lead { font-size: 13px; }
+      .grid-2, .grid-3, .case-layout, .pilot-layout, .role-split, .conversation { grid-template-columns: 1fr; gap: 18px; }
+      .panel { padding: 21px; }
+      .callout { flex-direction: column; gap: 4px; padding: 15px 18px; font-size: 12px; }
+      .service { padding: 17px 0; }
+      .badge { margin-left: 0; margin-top: 8px; display: table; }
+      .case-brief { padding: 24px; }
+      .flow-row { grid-template-columns: 1fr; gap: 12px; }
+      .flow-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+      .flow-step:nth-child(2)::after { display: none; }
+      .flow-step { font-size: 12px; }
+      .role-split { margin-top: 25px; }
+      .table-wrap { overflow-x: auto; }
+      table { min-width: 530px; font-size: 12px; }
+      th, td { padding: 12px; }
+      .timeline { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 18px; margin-top: 28px; }
+      .stage h3 { font-size: 16px; }
+      .stage p { font-size: 12px; }
+      .evidence { min-height: 215px; }
+      .page-footer { font-size: 9px; letter-spacing: .3px; align-items: flex-start; line-height: 1.7; gap: 12px; }
+      .pilot-focus .big-word { font-size: 36px; }
+      .closing h2 { font-size: 31px; }
+      .contact { align-items: flex-start; flex-direction: column; }
+      .contact-placeholder { border-left: 0; padding: 12px 0 0; border-top: 1px solid var(--line); width: 100%; }
+    }
+    @media print {
+      .document { display: block; }
+      .cover, .slide { width: 297mm; height: 210mm; max-width: none; min-height: 0; margin: 0; aspect-ratio: auto; box-shadow: none; break-inside: avoid; break-after: page; }
+      .slide { padding: 44px 64px 32px; }
+      .document > :last-child { break-after: auto; }
+    }
+  </style>
+</head>
+<body>
+  <main class="document" aria-label="企业 AI 提效方案与案例展示">
+  <section class="cover" aria-labelledby="cover-title" id="page-01">
+    <header class="masthead">
+      <div class="series"><span class="series-mark" aria-hidden="true"><i></i><i></i><i></i></span>企业 AI 提效 · 方案与案例</div>
+      <span class="edition" lang="en">AI FOR BUSINESS</span>
+    </header>
+
+    <section class="hero" aria-label="案例封面">
+      <div class="copy">
+        <p class="eyebrow">业务场景 · AI 应用实践</p>
+        <h1 id="cover-title"><span>让 AI 落地</span><span class="accent">让企业提效</span></h1>
+        <p class="subtitle">从具体业务场景出发，优化工作流程，<br>让团队专注更有价值的事。</p>
+      </div>
+
+      <div class="illustration" aria-hidden="true">
+        <svg viewBox="0 0 520 470" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="panel" x1="200" y1="45" x2="465" y2="405" gradientUnits="userSpaceOnUse"><stop stop-color="#f6f9fe"/><stop offset="1" stop-color="#eaf1fd"/></linearGradient>
+            <linearGradient id="flow" x1="80" y1="240" x2="490" y2="240" gradientUnits="userSpaceOnUse"><stop stop-color="#c6d7f7"/><stop offset=".58" stop-color="#245bdb"/><stop offset="1" stop-color="#245bdb"/></linearGradient>
+            <linearGradient id="core" x1="237" y1="187" x2="325" y2="282" gradientUnits="userSpaceOnUse"><stop stop-color="#3976ed"/><stop offset="1" stop-color="#194fc7"/></linearGradient>
+            <pattern id="grid" width="27" height="27" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#c7d6eb"/></pattern>
+          </defs>
+          <path d="M186 58H443V414H186L231 236L186 58Z" fill="url(#panel)"/>
+          <path d="M214 83H469V389H214V83Z" fill="url(#grid)" opacity=".55"/>
+          <path d="M230 58H443V414H230" stroke="#dce6f5"/>
+          <path d="M98 130H143C173 130 175 160 198 185L243 231" stroke="#d1ddf0" stroke-width="2"/>
+          <path d="M65 199H156C192 199 206 231 243 231" stroke="#b9cdf0" stroke-width="2"/>
+          <path d="M80 270H161C197 270 208 247 243 247" stroke="#b9cdf0" stroke-width="2"/>
+          <path d="M113 339H145C184 339 181 291 211 270L243 247" stroke="#d1ddf0" stroke-width="2"/>
+          <g fill="white" stroke="#cbd9ed" stroke-width="1.5">
+            <rect x="88" y="118" width="25" height="25" rx="5"/>
+            <rect x="54" y="186" width="25" height="25" rx="5"/>
+            <rect x="69" y="257" width="25" height="25" rx="5"/>
+            <rect x="102" y="326" width="25" height="25" rx="5"/>
+          </g>
+          <g stroke="#a3b9dc" stroke-width="1.5" stroke-linecap="round">
+            <path d="M96 127H105M96 132H102M62 195H71M62 200H68M77 266H86M77 271H83M110 335H119M110 340H116"/>
+          </g>
+          <path d="M321 238H464" stroke="url(#flow)" stroke-width="9"/>
+          <path d="M449 219L469 238L449 257" stroke="#245bdb" stroke-width="9" stroke-linejoin="miter"/>
+          <rect x="231" y="186" width="105" height="105" rx="24" fill="#245bdb" opacity=".07"/>
+          <rect x="239" y="194" width="89" height="89" rx="19" fill="url(#core)"/>
+          <rect x="245" y="200" width="77" height="77" rx="14" stroke="white" stroke-opacity=".2"/>
+          <text x="283" y="251" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="600" letter-spacing="-1" fill="white">AI</text>
+          <path d="M281 105V165M281 310V367" stroke="#ccdbf2" stroke-dasharray="4 6"/>
+          <circle cx="281" cy="104" r="4" fill="#a8bfe5"/>
+          <circle cx="281" cy="369" r="4" fill="#a8bfe5"/>
+          <text x="105" y="388" text-anchor="middle" font-family="sans-serif" font-size="11" letter-spacing="2" fill="#8192aa">业务流程</text>
+          <text x="397" y="388" text-anchor="middle" font-family="sans-serif" font-size="11" letter-spacing="2" fill="#5275ab">高效协作</text>
+        </svg>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>
+        <p class="footer-title">面向企业老板与负责人</p>
+        <p class="footer-note" lang="en">TURN AI INTO EVERYDAY PRODUCTIVITY</p>
+      </div>
+      <div class="topics" aria-label="案例关注方向"><span>场景落地</span><span>流程优化</span><span>团队提效</span></div>
+    </footer>
+  </section>
+
+  <section class="slide" id="page-02" aria-labelledby="title-02">
+    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>企业的效率问题</span></header>
+    <div class="page-body">
+      <p class="kicker">从每天发生的工作说起</p>
+      <h2 id="title-02">企业的时间，消耗在哪里？</h2>
+      <p class="lead">如果这些情况也在你的团队里发生，就值得重新梳理工作流程。</p>
+      <div class="grid-2 space-top">
+        <article class="panel"><h3>同样的工作，反复做</h3><p>整理资料、复制数据、调整格式，每次都要从头开始。</p><p class="impact">重复操作占用了本可用于业务的时间。</p></article>
+        <article class="panel"><h3>需要的信息，找不到</h3><p>文件分散在群聊、文档和个人电脑里，找一份资料要问好几个人。</p><p class="impact">信息查找拖慢响应，也容易用错版本。</p></article>
+        <article class="panel"><h3>关键经验，靠个人</h3><p>业务方法在老员工脑子里，新人遇到问题只能反复请教。</p><p class="impact">经验难以复用，交接和培养需要更多投入。</p></article>
+        <article class="panel"><h3>任务交接，来回确认</h3><p>需求不完整、输出不统一，工作在多个岗位之间反复修改。</p><p class="impact">等待与返工，让一次任务变成多次沟通。</p></article>
+      </div>
+      <div class="callout"><strong>提效的起点</strong><span>找出高频、重复、规则相对清晰的工作，判断哪些环节适合由 AI 辅助完成。</span></div>
+    </div>
+    <footer class="page-footer"><span>从流程里的实际问题出发</span><span class="page-number">02 / 11</span></footer>
+  </section>
+
+  <section class="slide" id="page-03" aria-labelledby="title-03">
+    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>服务内容</span></header>
+    <div class="page-body">
+      <p class="kicker">把业务需求转化成可使用的工作方式</p>
+      <h2 id="title-03">从发现问题，到团队真正用起来</h2>
+      <p class="lead">围绕具体流程设计 AI 提效方案。以下为建议服务内容，实际交付范围按项目需求确定。</p>
+      <div class="grid-2 space-top">
+        <article class="service"><span class="service-number">01</span><div><h3>业务诊断与机会梳理</h3><p>了解岗位任务、现有工具与工作瓶颈，选择值得先做的改进环节。</p><p class="deliverable">建议交付：流程现状、问题清单、试点建议</p></div></article>
+        <article class="service"><span class="service-number">02</span><div><h3>流程设计与方案搭建</h3><p>明确 AI 和人的分工，整理资料、模板与规则，搭建可验证的工作流程。</p><p class="deliverable">建议交付：流程方案、试用版本、操作模板</p></div></article>
+        <article class="service"><span class="service-number">03</span><div><h3>团队培训与使用辅导</h3><p>结合员工的真实任务演练，让团队知道如何输入、如何判断、如何修改。</p><p class="deliverable">建议交付：任务演练、使用指引、审核要点</p></div></article>
+        <article class="service"><span class="service-number">04</span><div><h3>效果复盘与持续优化</h3><p>结合使用记录与员工反馈，检查效果和问题，再决定如何调整与扩展。</p><p class="deliverable">建议交付：效果记录、问题复盘、优化建议</p></div></article>
+      </div>
+      <div class="callout"><strong>围绕一个目标</strong><span>让 AI 成为员工完成日常任务时，用得上、能检查、可持续使用的工作辅助。</span></div>
+    </div>
+    <footer class="page-footer"><span>服务范围、周期与费用在需求明确后约定</span><span class="page-number">03 / 11</span></footer>
+  </section>
+
+  <section class="slide" id="page-04" aria-labelledby="title-04">
+    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>核心案例 / 业务背景</span></header>
+    <div class="page-body">
+      <p class="kicker">案例演示 · 客户需求整理与方案初稿</p>
+      <h2 id="title-04">一份客户方案，为什么总要反复整理？</h2>
+      <p class="lead">以销售支持工作为例，演示如何拆解问题、设计方案并验证效果。<span class="badge">流程示意 · 非真实客户成果</span></p>
+      <div class="case-layout">
+        <aside class="case-brief"><span class="small-label">示例业务任务</span><h3>从客户沟通记录<br>到方案初稿</h3><p>每次沟通结束后，需要整理需求、查询产品资料，再写出可供审核的初步方案。</p><dl><div><dt>参与岗位</dt><dd>销售、销售支持、业务负责人</dd></div><div><dt>输入材料</dt><dd>沟通记录、产品资料、方案模板</dd></div><div><dt>期望产出</dt><dd>需求摘要、待确认项、方案初稿</dd></div></dl></aside>
+        <div>
+          <article class="issue"><span>↗</span><div><h3>信息分散，整理耗时</h3><p>客户需求散落在沟通记录中，人员需要逐条查找和重新归纳。</p></div></article>
+          <article class="issue"><span>↗</span><div><h3>资料检索，依赖熟悉程度</h3><p>不同员工对产品资料的掌握不同，查找相关内容的路径也不同。</p></div></article>
+          <article class="issue"><span>↗</span><div><h3>初稿不统一，审核反复</h3><p>关键信息缺漏、格式不一致，会增加负责人审核和返工的工作量。</p></div></article>
+          <p class="note">正式案例待补充：企业背景、实际任务量、原流程记录及可展示的业务材料。</p>
+        </div>
+      </div>
+    </div>
+    <footer class="page-footer"><span>案例演示 1 / 3 · 先定义具体问题</span><span class="page-number">04 / 11</span></footer>
+  </section>
+
+  <section class="slide" id="page-05" aria-labelledby="title-05">
+    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>核心案例 / 实施方式</span></header>
+    <div class="page-body">
+      <p class="kicker">案例演示 · 工作流程设计</p>
+      <h2 id="title-05">让 AI 辅助整理，让人把关判断</h2>
+      <p class="lead">将重复的信息处理交给 AI 辅助，业务判断、重要承诺与最终发送保留人工确认。</p>
+      <div class="flow-row"><div class="flow-label">原流程示意</div><div class="flow-steps"><div class="flow-step">翻阅沟通记录<small>人工查找</small></div><div class="flow-step">整理客户需求<small>手动归纳</small></div><div class="flow-step">查资料写方案<small>从头起草</small></div><div class="flow-step">审核并修改<small>补充缺漏</small></div></div></div>
+      <div class="flow-row"><div class="flow-label">建议流程</div><div class="flow-steps"><div class="flow-step">提供规范材料<small>人员准备</small></div><div class="flow-step highlight">AI 提取与整理<small>列出待确认项</small></div><div class="flow-step highlight">AI 辅助起草<small>依据指定资料</small></div><div class="flow-step">人员审核定稿<small>确认后发送</small></div></div></div>
+      <div class="role-split">
+        <article class="plain-item blue"><h3>AI 辅助完成</h3><p>提取需求要点、匹配提供的资料、套用结构模板，标记缺失或不确定的信息。</p></article>
+        <article class="plain-item"><h3>人员负责确认</h3><p>核对客户真实意图、产品信息和报价，检查业务承诺，决定哪些内容可以对外使用。</p></article>
+      </div>
+      <div class="callout"><strong>落地所需</strong><span>整理资料来源、统一输出模板、明确审核标准，再用真实任务验证流程是否可用。</span></div>
+    </div>
+    <footer class="page-footer"><span>案例演示 2 / 3 · 此页为建议流程，尚非已实施记录</span><span class="page-number">05 / 11</span></footer>
+  </section>
+
+  <section class="slide" id="page-06" aria-labelledby="title-06">
+    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>核心案例 / 效果验证</span></header>
+    <div class="page-body">
+      <p class="kicker">案例演示 · 如何判断是否有价值</p>
+      <h2 id="title-06">提效多少，用实际任务来验证</h2>
+      <p class="lead">选取可比较的任务，记录使用前后的完整过程，把准备、审核和修改时间一起算进去。</p>
+      <div class="table-wrap"><table aria-label="案例效果的评估维度"><thead><tr><th scope="col">观察维度</th><th scope="col">具体记录什么</th><th scope="col">对比方法</th><th scope="col">实际结果</th></tr></thead><tbody>
+        <tr><td>处理时间</td><td>从接到材料到形成可用稿的总用时</td><td>比较同类任务的用时</td><td class="pending">待试点验证</td></tr>
+        <tr><td>交付质量</td><td>关键信息的准确性与完整性</td><td>按同一审核标准评分</td><td class="pending">待试点验证</td></tr>
+        <tr><td>返工情况</td><td>修改次数、原因与额外投入</td><td>记录每次审核与修改</td><td class="pending">待试点验证</td></tr>
+        <tr><td>使用成本</td><td>工具费用、人员投入与维护工作</td><td>结合业务量评估净收益</td><td class="pending">待试点验证</td></tr>
+      </tbody></table></div>
+      <div class="callout"><strong>验证依据</strong><span>同类任务样本 + 前后版本 + 用时记录 + 审核反馈，形成可以回看的证据。</span></div>
+      <p class="note">本页展示评估方法，未填入任何客户效果数据。实际效果需结合任务复杂度、资料质量与使用情况判断。</p>
+    </div>
+    <footer class="page-footer"><span>案例演示 3 / 3 · 后续替换为真实对比与产出</span><span class="page-number">06 / 11</span></footer>
+  </section>
+
+  <section class="slide" id="page-07" aria-labelledby="title-07">
+    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>落地流程</span></header>
+    <div class="page-body">
+      <p class="kicker">先做出可验证的小范围改进</p>
+      <h2 id="title-07">从一个试点开始，逐步融入业务</h2>
+      <p class="lead">将实施过程拆成四个阶段，每一步都有明确的工作内容和判断依据。</p>
+      <div class="timeline">
+        <article class="stage"><span class="stage-number">01 / 了解现状</span><h3>把任务讲清楚</h3><p>了解工作流程、频率与参与人员，收集典型材料，确定当前瓶颈。</p><p class="stage-result">产出：问题与目标清单</p></article>
+        <article class="stage"><span class="stage-number">02 / 设计试点</span><h3>把范围定下来</h3><p>选择一个工作环节，明确资料来源、人机分工和效果衡量方式。</p><p class="stage-result">产出：试点方案与标准</p></article>
+        <article class="stage"><span class="stage-number">03 / 真实试用</span><h3>让团队用起来</h3><p>搭建试用流程，用真实任务演练，记录问题并调整使用方式。</p><p class="stage-result">产出：可试用流程与指引</p></article>
+        <article class="stage"><span class="stage-number">04 / 复盘优化</span><h3>用结果做决定</h3><p>比较时间、质量和成本，判断继续优化、扩大使用或调整方向。</p><p class="stage-result">产出：复盘与下一步建议</p></article>
+      </div>
+      <div class="callout"><strong>企业需要参与</strong><span>指定一位业务负责人，安排实际使用人员，提供可用于试点的材料，并共同确认结果。</span></div>
+      <p class="note">实施周期依任务复杂度、资料准备情况及对接需求确定。</p>
+    </div>
+    <footer class="page-footer"><span>每个阶段都围绕真实工作推进</span><span class="page-number">07 / 11</span></footer>
+  </section>
+
+  <section class="slide" id="page-08" aria-labelledby="title-08">
+    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>实施中的实际问题</span></header>
+    <div class="page-body">
+      <p class="kicker">让负责人有清晰的判断依据</p>
+      <h2 id="title-08">落地之前，把这些问题说清楚</h2>
+      <div class="grid-2 space-top">
+        <article class="faq"><h3>是否要更换现有系统？</h3><p>先了解企业已有工具和使用习惯，评估能否在现有流程中接入；需要集成或替换时，再确认范围与成本。</p></article>
+        <article class="faq"><h3>员工能不能学会？</h3><p>从员工熟悉的具体任务开始，提供模板与操作指引，通过试用观察能否独立完成工作。</p></article>
+        <article class="faq"><h3>AI 输出有错误怎么办？</h3><p>明确资料依据与审核责任，对关键信息逐项核对；对外内容、报价和业务承诺由人员确认。</p></article>
+        <article class="faq"><h3>企业资料如何使用？</h3><p>先确认资料范围、访问权限及选用工具的数据处理方式，按企业要求确定是否脱敏和如何部署。</p></article>
+        <article class="faq"><h3>后续由谁维护？</h3><p>在交付前约定资料更新、权限管理和问题处理的负责人，以及后续支持范围与费用。</p></article>
+        <article class="faq"><h3>值不值得投入，怎么判断？</h3><p>将工具、实施和维护投入，与实际节省的时间及质量变化一起评估，用试点结果支持决策。</p></article>
+      </div>
+    </div>
+    <footer class="page-footer"><span>具体安排根据企业现状与项目范围确认</span><span class="page-number">08 / 11</span></footer>
+  </section>
+
+  <section class="slide" id="page-09" aria-labelledby="title-09">
+    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>合作依据</span></header>
+    <div class="page-body">
+      <p class="kicker">为什么选择我们</p>
+      <h2 id="title-09">用业务理解与实际交付，建立信任</h2>
+      <p class="lead">选择服务方，可以重点看三个方面：是否理解业务、能否完成落地、效果能否验证。</p>
+      <div class="grid-3 space-top">
+        <article class="evidence"><span class="small-label">理解业务</span><h3>能看懂工作的难点</h3><p>从任务、岗位和流程出发，说明问题在哪里，为什么选择这个环节改进。</p><p class="evidence-slot">待补充：个人或团队介绍、相关行业经验</p></article>
+        <article class="evidence"><span class="small-label">完成交付</span><h3>能拿出可用的成果</h3><p>用实际流程、模板、工具或培训材料，展示方案如何进入日常工作。</p><p class="evidence-slot">待补充：真实项目、成果截图或演示材料</p></article>
+        <article class="evidence"><span class="small-label">验证价值</span><h3>能解释效果的来源</h3><p>说明对比口径、适用条件和使用反馈，让客户理解成果的实际意义。</p><p class="evidence-slot">待补充：客户反馈、效果记录与使用情况</p></article>
+      </div>
+      <p class="note">此页保留信任材料的位置，待提供真实经历与授权素材后完善。</p>
+    </div>
+    <footer class="page-footer"><span>真实经历 · 实际成果 · 可核实的反馈</span><span class="page-number">09 / 11</span></footer>
+  </section>
+
+  <section class="slide" id="page-10" aria-labelledby="title-10">
+    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>开始合作 / 试点建议</span></header>
+    <div class="page-body">
+      <p class="kicker">把第一步做具体</p>
+      <h2 id="title-10">先选一个值得改进的工作环节</h2>
+      <p class="lead">选择范围清晰、材料可获得的任务，先验证实际价值，再讨论更大范围的应用。</p>
+      <div class="pilot-layout">
+        <div class="pilot-focus"><span class="small-label">建议的合作起点</span><p class="big-word">一个具体任务</p><p>由一组实际使用人员参与，约定一套衡量标准，完成一次有记录的前后对比。</p><p class="note">试点范围、时间、费用和验收方式，在了解需求后共同确定。</p></div>
+        <ul class="check-list">
+          <li><strong>出现频率高</strong><span>这项工作经常发生，改进后有重复使用的价值。</span></li>
+          <li><strong>输入与产出清楚</strong><span>能提供任务材料，也能描述什么结果算完成。</span></li>
+          <li><strong>存在可改进的重复环节</strong><span>能具体指出查找、整理、起草或核对的耗时之处。</span></li>
+          <li><strong>可以检查效果</strong><span>有人能判断结果，并能记录时间、质量与返工情况。</span></li>
+        </ul>
+      </div>
+      <div class="callout"><strong>试点结束后</strong><span>根据实际效果，决定继续优化、扩大应用，或重新选择更适合的切入点。</span></div>
+    </div>
+    <footer class="page-footer"><span>先明确任务，再定义方案与投入</span><span class="page-number">10 / 11</span></footer>
+  </section>
+
+  <section class="slide closing" id="page-11" aria-labelledby="title-11">
+    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>开始合作 / 下一步</span></header>
+    <div class="page-body">
+      <p class="kicker">让改变从日常工作开始</p>
+      <h2 id="title-11">从团队最想省下的那段时间，<br><em>开始聊起。</em></h2>
+      <p class="lead">带着一个具体业务问题，讨论 AI 能在哪一步提供帮助。</p>
+      <div class="conversation">
+        <p><strong>现在怎么做？</strong>谁在做、多久做一次，通常需要经过哪些步骤。</p>
+        <p><strong>最费力的是什么？</strong>最耗时、最重复，或最容易出现返工的环节。</p>
+        <p><strong>希望改成什么样？</strong>想节省什么投入，哪些质量要求必须保留。</p>
+      </div>
+      <div class="contact"><div><strong>企业 AI 提效 · 合作沟通</strong><p>从需求梳理开始，明确适合你的下一步。</p></div><div class="contact-placeholder">联系人 / 品牌名称：待补充<br>微信 / 电话 / 邮箱：待补充</div></div>
+    </div>
+    <footer class="page-footer"><span>让 AI 落地，让企业提效</span><span class="page-number">11 / 11</span></footer>
+  </section>
+  </main>
+</body>
+</html>
