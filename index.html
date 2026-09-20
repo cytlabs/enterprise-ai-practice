@@ -88,7 +88,9 @@
     .document { display: flex; flex-direction: column; gap: 32px; }
     .slide { width: 100%; max-width: 1120px; aspect-ratio: 297 / 210; margin: 0 auto; padding: 44px 64px 32px; background: var(--paper); box-shadow: 0 18px 60px #1529440d, 0 2px 8px #15294405; display: flex; flex-direction: column; position: relative; }
     .page-header { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-bottom: 22px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 11px; letter-spacing: 1.5px; }
-    .page-header strong { color: var(--ink); font-weight: 500; }
+    .page-header strong { display: inline-flex; align-items: center; gap: 12px; color: var(--ink); font-size: 15px; letter-spacing: .5px; font-weight: 600; }
+    .module-number { color: var(--blue); font-size: 12px; font-weight: 500; font-variant-numeric: tabular-nums; letter-spacing: 1px; }
+    .case-opening .page-header { border-bottom-color: #9bb5e3; }
     .page-body { flex: 1; padding: 28px 0 22px; }
     .kicker { margin: 0 0 10px; font-size: 11px; letter-spacing: 2px; color: var(--blue); }
     .slide h2 { font-family: var(--display); margin: 0; font-size: 34px; letter-spacing: -1px; font-weight: 650; line-height: 1.4; }
@@ -188,6 +190,7 @@
       .document { gap: 20px; }
       .slide { min-height: 0; padding: 28px 24px 24px; }
       .page-header { font-size: 9px; letter-spacing: .5px; padding-bottom: 18px; gap: 12px; }
+      .page-header strong { gap: 9px; font-size: 13px; }
       .slide h2 { font-size: 27px; letter-spacing: -.5px; }
       .slide h3 { font-size: 17px; }
       .lead { font-size: 13px; }
@@ -425,7 +428,7 @@
   </section>
 
   <section class="slide " id="page-02" aria-labelledby="title-02">
-    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>企业的效率问题</span></header>
+    <header class="page-header"><strong><span class="module-number">01</span>企业的效率问题</strong><span>企业 AI 提效 · 方案与案例</span></header>
     <div class="page-body">
       <p class="kicker">企业日常工作中的四类痛点</p>
       <h2 id="title-02">企业的效率，卡在哪里？</h2>
@@ -443,7 +446,7 @@
   </section>
 
   <section class="slide" id="page-03" aria-labelledby="title-03">
-    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>服务内容</span></header>
+    <header class="page-header"><strong><span class="module-number">02</span>我们提供的服务</strong><span>企业 AI 提效 · 方案与案例</span></header>
     <div class="page-body">
       <p class="kicker">围绕业务落地的四项交付</p>
       <h2 id="title-03">我们为企业交付什么？</h2>
@@ -460,11 +463,11 @@
     <footer class="page-footer"><span></span><span class="page-number">03 / 16</span></footer>
   </section>
 
-  <section class="slide" id="page-04" aria-labelledby="title-04">
-    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>核心案例 / 猎头招聘 · 完整业务流程</span></header>
+  <section class="slide case-opening" id="page-04" aria-labelledby="title-04">
+    <header class="page-header"><strong><span class="module-number">03</span>核心案例 · 猎头招聘</strong><span>案例一 / 完整业务流程</span></header>
     <div class="page-body">
-      <p class="kicker">猎头招聘 / 项目负责人 的招聘交付工作</p>
-      <h2 id="title-04">猎头招聘：AI 如何融入招聘交付</h2>
+      <p class="kicker">从完整业务流程，看 AI 如何融入招聘交付</p>
+      <h2 id="title-04">案例一：猎头招聘</h2>
       <p class="lead">从见客户前的预研，到推荐、面试、入职与收款，沿着完整业务流程确定人与 AI 的分工。</p>
       <div class="case-layout">
         <aside class="case-brief"><span class="small-label">业务角色</span><h3>项目负责人<br>与交付团队协作</h3><dl><div><dt>项目负责人</dt><dd>理解客户需求、判断简历、推荐人选并陪同面试</dd></div><div><dt>交付团队</dt><dd>寻找并提交人选、沟通录用条件、跟进入职</dd></div></dl><p>业务沟通群沟通，共享文档沉淀资料；AI 助手 辅助分析，录音工具保留访谈信息。</p></aside>
@@ -486,7 +489,7 @@
   </section>
 
   <section class="slide compact-table" id="page-05" aria-labelledby="title-05">
-    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>核心案例 / 猎头招聘 · 核心 AI 功能</span></header>
+    <header class="page-header"><strong><span class="module-number">03</span>核心案例 · 猎头招聘</strong><span>案例一 / 核心 AI 功能</span></header>
     <div class="page-body">
       <p class="kicker">核心 AI 功能 / 需求预研与客户沟通</p>
       <h2 id="title-05">从了解客户，到形成清晰的找人标准</h2>
@@ -498,7 +501,7 @@
   </section>
 
   <section class="slide compact-table" id="page-06" aria-labelledby="title-06">
-    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>核心案例 / 猎头招聘 · 核心 AI 功能</span></header>
+    <header class="page-header"><strong><span class="module-number">03</span>核心案例 · 猎头招聘</strong><span>案例一 / 核心 AI 功能</span></header>
     <div class="page-body">
       <p class="kicker">核心 AI 功能 / 人选评估与项目复盘</p>
       <h2 id="title-06">从简历评估，到推荐、面试与项目复盘</h2>
@@ -510,7 +513,7 @@
   </section>
 
   <section class="slide " id="page-07" aria-labelledby="title-07">
-    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>核心案例 / 猎头招聘 · 项目档案</span></header>
+    <header class="page-header"><strong><span class="module-number">03</span>核心案例 · 猎头招聘</strong><span>案例一 / 项目档案</span></header>
     <div class="page-body">
       <p class="kicker">连接各位助手 / 共用同一份项目档案</p>
       <h2 id="title-07">让 AI 看见整个招聘项目，而不只是一份简历</h2>
@@ -527,7 +530,7 @@
   </section>
 
   <section class="slide " id="page-08" aria-labelledby="title-08">
-    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>核心案例 / 猎头招聘 · 主动协作</span></header>
+    <header class="page-header"><strong><span class="module-number">03</span>核心案例 · 猎头招聘</strong><span>案例一 / 主动协作</span></header>
     <div class="page-body">
       <p class="kicker">下一阶段 / 主动协作流程</p>
       <h2 id="title-08">从“帮我分析一下”，到资料来了就接着做</h2>
@@ -547,7 +550,7 @@
   </section>
 
   <section class="slide compact-table" id="page-09" aria-labelledby="title-09">
-    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>核心案例 / 猎头招聘 · 阶段成果</span></header>
+    <header class="page-header"><strong><span class="module-number">03</span>核心案例 · 猎头招聘</strong><span>案例一 / 阶段成果</span></header>
     <div class="page-body">
       <p class="kicker">阶段成果与后续实施</p>
       <h2 id="title-09">从流程梳理，到持续改善招聘交付</h2>
@@ -565,12 +568,12 @@
     <footer class="page-footer"><span></span><span class="page-number">09 / 16</span></footer>
   </section>
 
-  <section class="slide " id="page-10" aria-labelledby="title-10">
-    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>补充案例 / 达人营销 · 任务能力</span></header>
+  <section class="slide case-opening" id="page-10" aria-labelledby="title-10">
+    <header class="page-header"><strong><span class="module-number">03</span>核心案例 · 达人营销</strong><span>案例二 / 核心 AI 功能</span></header>
     <div class="page-body">
-      <p class="kicker">达人营销交付 / 用同一套方法看另一种业务</p>
-      <h2 id="title-10">从客户需求，到一份有依据的达人名单</h2>
-      <p class="lead">客户对接与达人交付需要反复理解需求、搜索核验、整理名单，再根据反馈调整。两类职责可由同一人承担。</p>
+      <p class="kicker">同一套方法，应用于另一种业务</p>
+      <h2 id="title-10">案例二：达人营销</h2>
+      <p class="lead">从客户需求，到一份有依据的达人名单：AI 辅助理解需求、搜索核验、整理名单，再根据反馈调整。</p>
 
       <div class="creator-route"><span>客户提供需求</span><span>搜索与查看内容</span><span>整理名单</span><span>人工审核后交付</span><span>客户反馈与调整</span></div>
       <div class="grid-3 space-top">
@@ -585,7 +588,7 @@
   </section>
 
   <section class="slide " id="page-11" aria-labelledby="title-11">
-    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>补充案例 / 达人营销 · 主动协作</span></header>
+    <header class="page-header"><strong><span class="module-number">03</span>核心案例 · 达人营销</strong><span>案例二 / 主动协作</span></header>
     <div class="page-body">
       <p class="kicker">下一阶段 / 让客户反馈推进交付</p>
       <h2 id="title-11">客户说过的话，下一轮交付能接得住</h2>
@@ -605,7 +608,7 @@
   </section>
 
   <section class="slide " id="page-12" aria-labelledby="title-12">
-    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>落地流程</span></header>
+    <header class="page-header"><strong><span class="module-number">04</span>企业如何落地</strong><span>企业 AI 提效 · 方案与案例</span></header>
     <div class="page-body">
       <p class="kicker">看清全局，分阶段实施</p>
       <h2 id="title-12">从组织梳理，到一条能持续运行的工作链路</h2>
@@ -622,7 +625,7 @@
   </section>
 
   <section class="slide " id="page-13" aria-labelledby="title-13">
-    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>实施中的实际问题</span></header>
+    <header class="page-header"><strong><span class="module-number">05</span>老板关心的实施问题</strong><span>企业 AI 提效 · 方案与案例</span></header>
     <div class="page-body">
       <p class="kicker">把企业负责人关心的事情说清楚</p>
       <h2 id="title-13">AI 能主动做事，人怎样掌握工作？</h2>
@@ -641,7 +644,7 @@
   </section>
 
   <section class="slide " id="page-14" aria-labelledby="title-14">
-    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>合作依据</span></header>
+    <header class="page-header"><strong><span class="module-number">06</span>为什么选择我们</strong><span>企业 AI 提效 · 方案与案例</span></header>
     <div class="page-body">
       <p class="kicker">为什么选择我们 / 关注业务，也关注交付</p>
       <h2 id="title-14">把业务理解、实际交付和持续改进放在一起</h2>
@@ -658,7 +661,7 @@
   </section>
 
   <section class="slide " id="page-15" aria-labelledby="title-15">
-    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>开始合作 / 试点建议</span></header>
+    <header class="page-header"><strong><span class="module-number">07</span>如何开始合作</strong><span>选择试点</span></header>
     <div class="page-body">
       <p class="kicker">从理解交付开始，把第一步做具体</p>
       <h2 id="title-15">先看清工作，再选一个值得验证的环节</h2>
@@ -678,7 +681,7 @@
   </section>
 
   <section class="slide closing" id="page-16" aria-labelledby="title-16">
-    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>开始合作 / 下一步</span></header>
+    <header class="page-header"><strong><span class="module-number">07</span>如何开始合作</strong><span>下一步</span></header>
     <div class="page-body">
       <p class="kicker">让改变从一项真实交付开始</p>
       <h2 id="title-16">从“这件事现在怎么完成”，<br><em>开始聊起。</em></h2>
