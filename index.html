@@ -341,6 +341,25 @@
       .exception-notes { gap: 14px; }
     }
   </style>
+  <style>
+    .recruitment-stages { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .recruitment-stages li { background: #f5f8fd; border-top: 2px solid #dce6f5; padding: 15px 14px; }
+    .recruitment-stages li > span { color: var(--blue); font-size: 10px; letter-spacing: 1px; }
+    .recruitment-stages h3 { font-size: 15px; margin-top: 7px; }
+    .recruitment-stages p { font-size: 11px; line-height: 1.8; color: var(--muted); margin: 7px 0 0; }
+    .agent-table { table-layout: fixed; }
+    .agent-table th:nth-child(1) { width: 24%; }
+    .agent-table th:nth-child(2) { width: 20%; }
+    .agent-table td:nth-child(2) { color: var(--blue); }
+    .compact-table .agent-table td { padding: 11px 14px; }
+    @media screen and (max-width: 640px) {
+      .recruitment-stages { grid-template-columns: 1fr; gap: 12px; }
+      .recruitment-stages li { padding: 15px 18px; }
+      .recruitment-stages h3 { display: inline; margin-left: 12px; }
+      .recruitment-stages p { margin-left: 30px; }
+      .agent-table { min-width: 650px; }
+    }
+  </style>
 </head>
 <body>
   <main class="document" aria-label="企业 AI 提效方案与案例展示">
@@ -423,84 +442,79 @@
     <footer class="page-footer"><span></span><span class="page-number">02 / 16</span></footer>
   </section>
 
-  <section class="slide " id="page-03" aria-labelledby="title-03">
-    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>服务内容 / 工作方法</span></header>
+  <section class="slide" id="page-03" aria-labelledby="title-03">
+    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>服务内容</span></header>
     <div class="page-body">
-      <p class="kicker">先理解企业，再确定从哪里开始</p>
-      <h2 id="title-03">从企业目标出发，重新安排人和 AI 的工作</h2>
-      <p class="lead">先看公司要交付什么，再梳理部门、岗位和日常任务。理解全局后，分阶段推进。</p>
+      <p class="kicker">围绕业务落地的四项交付</p>
+      <h2 id="title-03">我们为企业交付什么？</h2>
+      <p class="lead">针对重复劳动、信息分散和经验难复用的问题，提供改造方案、可用工具，以及团队持续使用的支持。</p>
 
-      <div class="method-chain" aria-label="自上而下梳理业务">
-        <div><b>企业目标</b><small>为客户交付什么</small></div><div><b>部门分工</b><small>各自负责什么</small></div><div><b>岗位职责</b><small>由哪些人承担</small></div><div><b>具体任务</b><small>每天怎样完成</small></div><div><b>人机分工</b><small>哪些交给 AI</small></div>
-      </div>
       <div class="grid-2 space-top">
-        <article class="panel method-panel"><span class="small-label">第一步 / 让 AI 能做具体的事</span><h3>把一项项任务交给 AI 辅助</h3><p>例如整理客户需求、分析候选人资料。人提供材料、确认结果，再安排下一步。</p><p class="impact">形成：任务清单、操作方法、可检查的产出。</p></article>
-        <article class="panel method-panel"><span class="small-label">第二步 / 让 AI 知道接下来做什么</span><h3>让业务背景和工作进展可以被读取</h3><p>让 AI 知道这是哪个项目、目前缺什么、谁负责确认，逐步接起前后工作。</p><p class="impact">形成：共享资料、项目档案、人机协作流程。</p></article>
-      </div><div class="callout"><strong>服务的落点</strong><span>梳理业务、划清分工、建立共享工作台，再用真实任务验证效果。</span></div>
+        <article class="panel"><h3>业务梳理与改造方案</h3><p>明确哪些工作值得改、哪些任务交给 AI、哪些判断由人负责，让企业知道从哪里开始。</p><p class="impact">交付：岗位任务清单、流程改造方案、试点计划。</p></article>
+        <article class="panel"><h3>可使用的 AI 助手与工具</h3><p>围绕需求整理、资料分析等具体工作，提供员工能够直接使用的助手和工具。</p><p class="impact">交付：任务助手、工作模板、结果审核要求。</p></article>
+        <article class="panel"><h3>企业共享工作台</h3><p>集中管理企业背景、项目档案、岗位助手与共享方法，让团队共用资料和经验。</p><p class="impact">交付：企业工作台、项目档案、共享方法库。</p></article>
+        <article class="panel"><h3>团队使用指导与持续优化</h3><p>结合日常任务指导员工使用，处理实际问题，把有效的改进沉淀为团队共用的方法。</p><p class="impact">交付：使用指导、操作手册、复盘与优化支持。</p></article>
+      </div>
+      <div class="callout"><strong>服务目标</strong><span>让员工有工具可用，让负责人有方案可推进，让企业的经验可以持续积累。</span></div>
     </div>
     <footer class="page-footer"><span></span><span class="page-number">03 / 16</span></footer>
   </section>
 
-  <section class="slide " id="page-04" aria-labelledby="title-04">
-    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>服务内容 / 企业共享工作台</span></header>
+  <section class="slide" id="page-04" aria-labelledby="title-04">
+    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>核心案例 / 猎头招聘 · 完整业务流程</span></header>
     <div class="page-body">
-      <p class="kicker">把企业版数字分身，做成团队共用的工作台</p>
-      <h2 id="title-04">让不同的 AI 助手，共用一套业务背景</h2>
-      <p class="lead">把原本分散在人脑、群聊和文档里的信息组织起来，让助手知道企业在做什么、项目进展到哪里。</p>
-
-      <div class="platform-map" aria-label="企业共享工作台">
-        <div class="platform-heading"><strong>企业共享工作台</strong><span>统一管理 · 团队共享</span></div>
-        <div class="platform-parts">
-          <div><h3>企业情况</h3><p>目标、组织架构<br>岗位职责与规范</p></div>
-          <div><h3>项目档案</h3><p>客户需求、相关人员<br>材料、反馈与当前进展</p></div>
-          <div><h3>共享工作方法</h3><p>一类任务怎样完成<br>怎样检查，何时请人确认</p></div>
-          <div><h3>岗位 AI 助手</h3><p>承担哪些任务<br>能做什么，交给谁审核</p></div>
-        </div>
+      <p class="kicker">猎头招聘 / 项目负责人 的招聘交付工作</p>
+      <h2 id="title-04">猎头招聘：AI 如何融入招聘交付</h2>
+      <p class="lead">从见客户前的预研，到推荐、面试、入职与收款，沿着完整业务流程确定人与 AI 的分工。</p>
+      <div class="case-layout">
+        <aside class="case-brief"><span class="small-label">业务角色</span><h3>项目负责人<br>与交付团队协作</h3><dl><div><dt>项目负责人</dt><dd>理解客户需求、判断简历、推荐人选并陪同面试</dd></div><div><dt>交付团队</dt><dd>寻找并提交人选、沟通录用条件、跟进入职</dd></div></dl><p>业务沟通群沟通，共享文档沉淀资料；AI 助手 辅助分析，录音工具保留访谈信息。</p></aside>
+        <ol class="recruitment-stages" aria-label="招聘交付的九个业务环节">
+          <li><span>01</span><h3>需求预研</h3><p>见客户前了解企业与职位</p></li>
+          <li><span>02</span><h3>客户沟通</h3><p>现场录音，确认岗位方向</p></li>
+          <li><span>03</span><h3>需求拆解</h3><p>整理客户资料与找人标准</p></li>
+          <li><span>04</span><h3>简历判断</h3><p>分析匹配情况，更新记录</p></li>
+          <li><span>05</span><h3>人选推荐</h3><p>负责人向客户推荐</p></li>
+          <li><span>06</span><h3>面试跟进</h3><p>负责人陪面，AI 整理报告</p></li>
+          <li><span>07</span><h3>录用沟通</h3><p>交付团队沟通录用条件</p></li>
+          <li><span>08</span><h3>入职跟进</h3><p>交付团队跟进人选入职</p></li>
+          <li><span>09</span><h3>收款跟进</h3><p>跟进开票与款项进展</p></li>
+        </ol>
       </div>
-      <div class="shared-example"><span class="small-label">以同一个岗位的两位同事为例</span><div class="shared-pair"><p><strong>同事甲与他的 AI 助手</strong><span>使用甲负责的项目资料和个人背景</span></p><span class="shared-center">共用岗位规范<br>共用工作方法</span><p><strong>同事乙与他的 AI 助手</strong><span>使用乙负责的项目资料和个人背景</span></p></div></div>
-      <div class="learning-loop"><strong>让一次改进，帮助更多人</strong><span>实际使用 → 发现更好的做法 → 确认并更新方法 → 同岗位共同复用</span></div>
-
+      <div class="callout"><strong>业务难点</strong><span>需求和人选信息持续变化，负责人需要反复理解、判断、同步，并安排下一步工作。</span></div>
     </div>
     <footer class="page-footer"><span></span><span class="page-number">04 / 16</span></footer>
   </section>
 
-  <section class="slide " id="page-05" aria-labelledby="title-05">
-    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>核心案例 / 鼎链 · 业务背景</span></header>
+  <section class="slide compact-table" id="page-05" aria-labelledby="title-05">
+    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>核心案例 / 猎头招聘 · 核心 AI 功能</span></header>
     <div class="page-body">
-      <p class="kicker">猎头招聘交付 · 业务背景</p>
-      <h2 id="title-05">一次招聘交付，为什么总要项目负责人盯着？</h2>
-      <p class="lead">客户需求、找人标准、候选人资料和面试反馈，需要在同一条招聘链路上持续对齐。</p>
-
-      <div class="case-layout">
-        <aside class="case-brief"><span class="small-label">鼎链 / 猎头招聘</span><h3>帮助客户找到<br>符合要求的人</h3><dl><div><dt>项目负责人（PM）</dt><dd>理解需求、审核推荐、对接客户</dd></div><div><dt>交付顾问</dt><dd>寻找候选人、沟通并提交资料</dd></div></dl></aside>
-        <div class="journey-list">
-          <div><b>客户提出需求</b><span>负责人沟通澄清，整理并同步找人标准。</span></div>
-          <div><b>顾问寻找候选人</b><span>开展沟通、提交资料，由负责人审核推荐。</span></div>
-          <div><b>客户面试并反馈</b><span>理解认可或拒绝的原因，调整下一轮寻找方向。</span></div>
-          <p class="note">每个阶段都在变化，负责人需要持续保存理解，并把变化告诉其他人。</p>
-        </div>
-      </div><div class="callout"><strong>真正的负担</strong><span>客户到底想找谁、上次为什么被拒绝、这次该怎么调整，都需要负责人记住、解释和推进。</span></div>
+      <p class="kicker">核心 AI 功能 / 需求预研与客户沟通</p>
+      <h2 id="title-05">从了解客户，到形成清晰的找人标准</h2>
+      <p class="lead">围绕需求理解与找人标准，精选核心 AI 功能。每个 Agent 都是一位职责明确的 AI 助手。</p>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="任务表，可横向滚动"><table class="agent-table" aria-label="需求预研、客户沟通和需求拆解的 Agent 分工"><thead><tr><th scope="col">业务任务</th><th scope="col">Agent 名称</th><th scope="col">Agent 的作用</th></tr></thead><tbody><tr><td>客户与岗位预研</td><td>需求预研助手</td><td>结合客户 PPT 和职位资料，整理业务背景、用人方向与需要进一步确认的问题。</td></tr><tr><td>准备客户沟通材料</td><td>访谈准备助手</td><td>把预研结果整理成沟通提纲与访谈手册，帮助 项目负责人 有重点地了解客户。</td></tr><tr><td>整理客户会议纪要</td><td>会议纪要助手</td><td>提炼会议结论与待确认事项，形成客户侧的沟通记录，供 项目负责人 核对。</td></tr><tr><td>整理交付所需的客户信息</td><td>客户档案助手</td><td>汇总客户背景与业务信息，形成交付团队查阅和理解项目的资料。</td></tr><tr><td>形成岗位找人说明书</td><td>找人标准助手</td><td>把职位要求和确认后的判断整理成找人标准，在共享文档中供交付团队使用。</td></tr></tbody></table></div>
+      <div class="callout"><strong>交付衔接</strong><span>客户侧留下清楚的会议结论，交付侧拿到客户背景与找人说明书，围绕同一套标准开展工作。</span></div>
     </div>
     <footer class="page-footer"><span></span><span class="page-number">05 / 16</span></footer>
   </section>
 
   <section class="slide compact-table" id="page-06" aria-labelledby="title-06">
-    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>核心案例 / 鼎链 · 任务分工</span></header>
+    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>核心案例 / 猎头招聘 · 核心 AI 功能</span></header>
     <div class="page-body">
-      <p class="kicker">第一步 / 让 AI 承担具体任务</p>
-      <h2 id="title-06">先接住整理和分析，把判断留给业务人员</h2>
-      <p class="lead">沿着招聘交付流程拆任务，明确每一步 AI 辅助完成什么、谁来确认。</p>
-      <div class="table-wrap" tabindex="0" role="region" aria-label="数据表，可横向滚动"><table aria-label="鼎链招聘任务的人机分工"><thead><tr><th scope="col">业务任务</th><th scope="col">AI 辅助完成</th><th scope="col">人负责确认</th></tr></thead><tbody><tr><td>收到初步需求</td><td>整理职位要求，结合客户资料提出待确认问题</td><td>与客户沟通，确认真实需求</td></tr><tr><td>开完需求会议</td><td>综合会议记录与已有判断，生成找人说明书</td><td>修正并确认找人标准</td></tr><tr><td>收到候选人资料</td><td>分析匹配点、风险和需要补充的信息</td><td>补充沟通，决定是否推荐</td></tr><tr><td>收到客户反馈</td><td>提取认可或拒绝原因，关联岗位与候选人</td><td>判断反馈含义及适用范围</td></tr><tr><td>项目复盘</td><td>汇总人工修正与招聘结果，提出经验更新建议</td><td>确认哪些经验可以复用</td></tr></tbody></table></div><div class="callout"><strong>这一阶段</strong><span>AI 已有明确的任务方向，但何时分析、提供哪些资料、结果交给谁，仍需要人来安排。</span></div>
+      <p class="kicker">核心 AI 功能 / 人选评估与项目复盘</p>
+      <h2 id="title-06">从简历评估，到推荐、面试与项目复盘</h2>
+      <p class="lead">找人标准明确后，核心 AI 功能集中在人选评估、推荐材料、面试报告与项目复盘。</p>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="任务表，可横向滚动"><table class="agent-table" aria-label="人选评估、推荐、面试与项目复盘的核心 AI 功能"><thead><tr><th scope="col">业务任务</th><th scope="col">Agent 名称</th><th scope="col">Agent 的作用</th></tr></thead><tbody><tr><td>判断候选人是否匹配</td><td>简历评估助手</td><td>结合找人标准分析顾问提交的简历，列出匹配点、疑问与需要补充的沟通。</td></tr><tr><td>准备客户推荐材料</td><td>推荐材料助手</td><td>汇总候选人的匹配理由和关键信息，形成推荐草稿，供 项目负责人 审核后发送。</td></tr><tr><td>整理面试报告</td><td>面试报告助手</td><td>根据面试记录整理回答要点、能力表现与待确认问题，形成面试报告。</td></tr><tr><td>沉淀项目经验</td><td>项目复盘助手</td><td>汇总人工修正、客户偏好和招聘结果，提出可复用的经验与方法更新建议。</td></tr></tbody></table></div>
+      <div class="callout"><strong>业务人员负责</strong><span>项目负责人 审核推荐、对接客户并陪同面试；交付团队负责录用条件沟通与入职跟进。</span></div>
     </div>
     <footer class="page-footer"><span></span><span class="page-number">06 / 16</span></footer>
   </section>
 
   <section class="slide " id="page-07" aria-labelledby="title-07">
-    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>核心案例 / 鼎链 · 项目档案</span></header>
+    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>核心案例 / 猎头招聘 · 项目档案</span></header>
     <div class="page-body">
-      <p class="kicker">第二步 / 把负责人脑中的背景整理出来</p>
+      <p class="kicker">连接各位助手 / 共用同一份项目档案</p>
       <h2 id="title-07">让 AI 看见整个招聘项目，而不只是一份简历</h2>
-      <p class="lead">同一个候选人是否合适，要结合客户背景、最新找人标准，以及这个岗位之前收到的反馈判断。</p>
+      <p class="lead">这些助手要配合完成同一个招聘项目，就需要共用客户背景、找人标准、候选人记录和反馈。项目档案把这些信息关联起来。</p>
 
       <div class="context-map" aria-label="招聘项目与客户、岗位、候选人、反馈之间的联系">
         <div class="context-side"><article><h3>客户档案</h3><p>业务背景、合作历史<br>已经确认的招聘偏好</p></article><article><h3>找人标准</h3><p>招聘目标、岗位要求<br>当前有效的找人说明书</p></article></div>
@@ -513,7 +527,7 @@
   </section>
 
   <section class="slide " id="page-08" aria-labelledby="title-08">
-    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>核心案例 / 鼎链 · 主动协作</span></header>
+    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>核心案例 / 猎头招聘 · 主动协作</span></header>
     <div class="page-body">
       <p class="kicker">下一阶段 / 主动协作流程</p>
       <h2 id="title-08">从“帮我分析一下”，到资料来了就接着做</h2>
@@ -527,13 +541,13 @@
           <li><span class="step-dot">4</span><div><h3>确认结果，继续跟进</h3><p>记录推荐状态，承接后续客户反馈，提出方向调整建议。</p></div></li>
         </ol>
         <aside class="exception-notes"><article><span class="small-label">如果资料不够</span><h3>请顾问补充</h3><p>说清缺什么、为什么需要；收到补充后继续分析。</p></article><article><span class="small-label">如果需要业务判断</span><h3>请负责人确认</h3><p>推荐与方向调整由人决定，确认结果回到同一项目中。</p></article></aside>
-      </div><div class="callout"><strong>改善目标</strong><span>负责人逐份搬运材料、重复解释标准、逐项安排分析，把精力留给客户沟通与关键判断。</span></div>
+      </div><div class="callout"><strong>改善目标</strong><span>减少负责人搬运材料、重复解释和逐项安排分析的工作，把精力留给客户沟通与关键判断。</span></div>
     </div>
     <footer class="page-footer"><span></span><span class="page-number">08 / 16</span></footer>
   </section>
 
   <section class="slide compact-table" id="page-09" aria-labelledby="title-09">
-    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>核心案例 / 鼎链 · 阶段成果</span></header>
+    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>核心案例 / 猎头招聘 · 阶段成果</span></header>
     <div class="page-body">
       <p class="kicker">阶段成果与后续实施</p>
       <h2 id="title-09">从流程梳理，到持续改善招聘交付</h2>
@@ -552,7 +566,7 @@
   </section>
 
   <section class="slide " id="page-10" aria-labelledby="title-10">
-    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>补充案例 / 呀呀达人 · 任务能力</span></header>
+    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>补充案例 / 达人营销 · 任务能力</span></header>
     <div class="page-body">
       <p class="kicker">达人营销交付 / 用同一套方法看另一种业务</p>
       <h2 id="title-10">从客户需求，到一份有依据的达人名单</h2>
@@ -564,14 +578,14 @@
         <article class="panel"><span class="small-label">搜索与核验</span><h3>从标签走到内容证据</h3><p>借助可访问的数据和工具发现候选，查看主页与代表内容；资料不足时由人判断。</p></article>
         <article class="panel"><span class="small-label">名单与反馈</span><h3>把选择理由留下来</h3><p>去重、整理匹配理由与风险，把客户的通过、拒绝和待定关联到具体达人。</p></article>
       </div>
-      <div class="callout"><strong>阶段成果</strong><span>Creator Scout 聚焦需求理解、达人发现和内容判断，已进行前置搜索筛选和交付流程验证。</span></div>
+      <div class="callout"><strong>阶段成果</strong><span>达人搜索助手 聚焦需求理解、达人发现和内容判断，已进行前置搜索筛选和交付流程验证。</span></div>
 
     </div>
     <footer class="page-footer"><span></span><span class="page-number">10 / 16</span></footer>
   </section>
 
   <section class="slide " id="page-11" aria-labelledby="title-11">
-    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>补充案例 / 呀呀达人 · 主动协作</span></header>
+    <header class="page-header"><strong>企业 AI 提效 · 方案与案例</strong><span>补充案例 / 达人营销 · 主动协作</span></header>
     <div class="page-body">
       <p class="kicker">下一阶段 / 让客户反馈推进交付</p>
       <h2 id="title-11">客户说过的话，下一轮交付能接得住</h2>
