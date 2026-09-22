@@ -401,6 +401,72 @@
       .agent-table { min-width: 650px; }
     }
   </style>
+  <style>
+    /* 章节页用字级、路径与业务对照表达过渡，保留单一主题。 */
+    .transition-page { justify-content: center; padding: 64px 72px; gap: 44px; }
+    .transition-label { display: flex; align-items: center; gap: 14px; margin: 0; font-size: 12px; letter-spacing: 3px; }
+    .transition-label::before { content: ''; width: 36px; height: 3px; background: currentColor; }
+    .transition-page h2 { margin: 0; font-size: 52px; line-height: 1.45; letter-spacing: -1px; font-weight: 600; }
+    .transition-page h2 em { font-style: normal; }
+    .case-intro { background: var(--paper); color: var(--ink); }
+    .case-intro .transition-label { color: var(--blue); }
+    .transition-layout { display: grid; grid-template-columns: 1.5fr 1fr; align-items: center; gap: 28px; }
+    .transition-premise { margin: 0 0 22px; color: var(--muted); font-size: 19px; line-height: 1.8; }
+    .case-intro h2 em { color: var(--blue); }
+    .transition-illustration { display: block; width: 100%; height: auto; }
+    .case-trail { display: flex; gap: 36px; align-items: baseline; padding-top: 22px; border-top: 1px solid var(--line); }
+    .case-trail span { display: flex; gap: 12px; align-items: baseline; font-size: 15px; }
+    .case-trail small { color: var(--muted); font-size: 11px; }
+    .case-bridge { background: var(--paper); }
+    .case-bridge .transition-label { color: var(--blue); }
+    .case-bridge h2 { color: var(--ink); }
+    .case-bridge h2 em { color: var(--blue); }
+    .method-transfer { display: grid; grid-template-columns: 1fr 1.15fr 1fr; align-items: center; margin-top: 2px; gap: 30px; }
+    .transfer-business { padding: 22px 0; border-top: 1px solid #b6c8e5; }
+    .transfer-business strong { font-size: 24px; font-weight: 600; }
+    .transfer-business p { font-size: 13px; color: var(--muted); line-height: 1.8; margin: 8px 0 0; }
+    .transfer-line { display: flex; align-items: center; gap: 10px; color: var(--blue); font-size: 13px; white-space: nowrap; }
+    .transfer-line::before, .transfer-line::after { content: ''; height: 1px; background: #86a8e6; flex: 1; }
+    .transfer-line span { padding: 13px 0; border-top: 2px solid var(--blue); border-bottom: 2px solid var(--blue); }
+
+    .page-footer { align-items: baseline; }
+    .page-takeaway { color: var(--ink); font-size: 11px; letter-spacing: 0; line-height: 1.65; }
+    .page-takeaway b { color: var(--blue); font-weight: 500; margin-right: 12px; white-space: nowrap; }
+    .pain-page .panel, .service-page .panel { background: transparent; border: 0; border-top: 1px solid var(--line); padding: 17px 0; }
+    .pain-page .grid-2, .service-page .grid-2 { column-gap: 36px; }
+    .outcome-grid article { background: transparent; padding-left: 0; padding-right: 0; }
+    .competition-table { margin-top: 28px; }
+    .competition-row { display: grid; grid-template-columns: 100px 1fr 1.15fr; gap: 26px; padding: 18px 0; border-bottom: 1px solid var(--line); align-items: start; }
+    .competition-head { padding: 0 0 12px; color: var(--muted); font-size: 11px; }
+    .competition-row strong { font-size: 16px; font-weight: 600; }
+    .competition-row p { margin: 0; font-size: 13px; line-height: 1.85; color: var(--muted); }
+    .competition-row p:last-child { color: var(--ink); }
+    .trend-evidence { margin-top: 22px; padding-left: 18px; border-left: 3px solid var(--blue); }
+    .trend-evidence strong { color: var(--blue); font-size: 12px; }
+    .trend-evidence p { margin: 7px 0; max-width: 850px; font-size: 12px; line-height: 1.8; color: var(--muted); }
+    .trend-evidence a { color: var(--muted); font-size: 10px; text-underline-offset: 3px; }
+    @media screen and (max-width: 1000px) { .transition-page { padding: 48px 40px; gap: 34px; } .transition-page h2 { font-size: 38px; } .transition-premise { font-size: 16px; } }
+    @media screen and (max-width: 640px) {
+      .transition-page { min-height: 600px; padding: 36px 26px; gap: 28px; }
+      .transition-page h2 { font-size: 29px; line-height: 1.5; letter-spacing: -.5px; }
+      .transition-layout { grid-template-columns: 1fr; gap: 18px; }
+      .transition-premise { font-size: 14px; margin-bottom: 15px; }
+      .transition-illustration { width: 210px; justify-self: center; }
+      .case-trail { flex-direction: column; gap: 12px; padding-top: 18px; }
+      .method-transfer { grid-template-columns: 1fr; gap: 12px; }
+      .transfer-line { max-width: 230px; width: 100%; }
+      .transfer-business { padding: 16px 0; }
+      .transfer-business strong { font-size: 22px; }
+      .page-takeaway { font-size: 10px; }
+      .page-takeaway b { display: block; margin: 0 0 4px; }
+      .competition-row { grid-template-columns: 1fr; gap: 8px; padding: 16px 0; }
+      .competition-head { display: none; }
+      .competition-row p::before { display: block; color: var(--blue); font-size: 10px; margin-bottom: 3px; }
+      .competition-row p:nth-child(2)::before { content: '继续依赖原有方式'; }
+      .competition-row p:last-child::before { content: '将 AI 用进实际业务'; }
+    }
+    @media print { .slide.transition-page { padding: 64px 72px; } }
+  </style>
 </head>
 <body>
   <main class="document" aria-label="企业 AI 提效方案与案例展示">
@@ -458,13 +524,13 @@
 
     <footer class="footer">
       <div>
-        <p class="footer-note">业务梳理 · 工作方法 · 案例实践</p>
+        <p class="footer-note">让 AI 进入实际工作，让经验成为团队能力</p>
       </div>
       <div class="topics" aria-label="案例关注方向"><span>场景落地</span><span>流程优化</span><span>团队提效</span></div>
     </footer>
   </section>
 
-  <section class="slide module-opening" id="page-02" aria-labelledby="title-02">
+  <section class="slide module-opening pain-page" id="page-02" aria-labelledby="title-02">
     <header class="page-header"><strong><span class="module-number">01</span>企业的效率问题</strong><span>企业 AI 提效 · 方案与案例</span></header>
     <div class="page-body">
       <p class="kicker">企业日常工作中的四类痛点</p>
@@ -479,14 +545,31 @@
       </div>
       <div class="callout"><strong>对企业的影响</strong><span>新人上手慢、骨干难脱身；业务量一增加，协调和返工也跟着增加。</span></div>
     </div>
-    <footer class="page-footer"><span></span><span class="page-number">02 / 13</span></footer>
+    <footer class="page-footer"><span class="page-takeaway"><b>本页要点</b>重复劳动、信息分散和经验依赖，正在占用企业的交付能力。</span><span class="page-number">02 / 16</span></footer>
   </section>
 
-  <section class="slide module-opening" id="page-03" aria-labelledby="title-03">
-    <header class="page-header"><strong><span class="module-number">02</span>我们提供的服务</strong><span>企业 AI 提效 · 方案与案例</span></header>
+  <section class="slide module-opening why-now" id="page-03" aria-labelledby="title-03">
+    <header class="page-header"><strong><span class="module-number">02</span>为什么现在应该做</strong><span>效率、成本与竞争力</span></header>
+    <div class="page-body">
+      <p class="kicker">工作方式正在改变，竞争也会随之改变</p>
+      <h2 id="title-03">为什么现在应该做？</h2>
+      <p class="lead">当同行用 AI 缩短交付时间、减少重复投入，同样的人员和预算就可能完成更多工作。继续沿用原有方式，意味着继续承担原有成本。</p>
+      <div class="competition-table" role="table" aria-label="工作方式变化如何影响企业竞争力">
+        <div class="competition-row competition-head" role="row"><span role="columnheader">竞争维度</span><span role="columnheader">继续依赖原有方式</span><span role="columnheader">将 AI 用进实际业务</span></div>
+        <div class="competition-row" role="row"><strong role="rowheader">交付速度</strong><p role="cell">材料靠人整理，交接靠人催办。</p><p role="cell">整理与分析由 AI 承担，业务人员及时接手判断。</p></div>
+        <div class="competition-row" role="row"><strong role="rowheader">单位成本</strong><p role="cell">业务增加，重复处理和协调投入也增加。</p><p role="cell">减少重复投入，为同等团队承接更多业务留出空间。</p></div>
+        <div class="competition-row" role="row"><strong role="rowheader">经验积累</strong><p role="cell">有效的做法仍留在个别人手里。</p><p role="cell">把每次反馈沉淀为共享方法，让团队持续改进。</p></div>
+      </div>
+      <div class="trend-evidence"><strong>企业已在行动</strong><p>微软 2025 年工作趋势指数调查中，81% 的受访领导者预计，未来 12–18 个月会将 Agent 中度或广泛纳入企业 AI 战略。</p><a href="https://www.microsoft.com/en-us/worklab/work-trend-index/2025-the-year-the-frontier-firm-is-born">来源：Microsoft · 2025 Work Trend Index</a></div>
+    </div>
+    <footer class="page-footer"><span class="page-takeaway"><b>本页要点</b>越早开始积累可复用的方法，越早有机会形成效率与成本优势。</span><span class="page-number">03 / 16</span></footer>
+  </section>
+
+  <section class="slide module-opening service-page" id="page-04" aria-labelledby="title-04">
+    <header class="page-header"><strong><span class="module-number">03</span>我们提供的服务</strong><span>企业 AI 提效 · 方案与案例</span></header>
     <div class="page-body">
       <p class="kicker">围绕业务落地的四项交付</p>
-      <h2 id="title-03">我们为企业交付什么？</h2>
+      <h2 id="title-04">我们为企业交付什么？</h2>
       <p class="lead">针对重复劳动、信息分散和经验难复用的问题，提供改造方案、可用工具，以及团队持续使用的支持。</p>
 
       <div class="grid-2 space-top">
@@ -497,14 +580,33 @@
       </div>
       <div class="callout"><strong>服务目标</strong><span>让员工有工具可用，让负责人有方案可推进，让企业的经验可以持续积累。</span></div>
     </div>
-    <footer class="page-footer"><span></span><span class="page-number">03 / 13</span></footer>
+    <footer class="page-footer"><span class="page-takeaway"><b>本页要点</b>交付方案、可用工具和持续支持，让 AI 真正进入日常工作。</span><span class="page-number">04 / 16</span></footer>
   </section>
 
-  <section class="slide case-opening module-opening" id="page-04" aria-labelledby="title-04">
-    <header class="page-header"><strong><span class="module-number">03</span>核心案例 · 猎头招聘</strong><span>案例一 / 完整业务流程</span></header>
+  <section class="slide transition-page case-intro" id="page-05" aria-labelledby="title-05">
+    <p class="transition-label">走进真实业务</p>
+    <div class="transition-layout">
+      <div><p class="transition-premise">从具体任务，到完整业务流程</p><h2 id="title-05">看 AI 如何在<br><em>真实案例中落地。</em></h2></div>
+      <svg class="transition-illustration" viewBox="0 0 320 340" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="从需求出发，经过协作，形成交付的连续流程">
+        <path d="M88 56H214C236 56 246 70 246 92V148C246 169 228 182 209 182H112C91 182 76 196 76 218V268H238" stroke="#86a8e6" stroke-width="2"/>
+        <path d="M226 258L238 268L226 278" stroke="#245bdb" stroke-width="2"/>
+        <circle cx="88" cy="56" r="21" fill="#ffffff" stroke="#86a8e6" stroke-width="2"/>
+        <circle cx="88" cy="56" r="6" fill="#245bdb"/>
+        <circle cx="246" cy="136" r="21" fill="#245bdb"/>
+        <path d="M237 136L243 142L256 128" stroke="white" stroke-width="2"/>
+        <circle cx="76" cy="249" r="21" fill="#ffffff" stroke="#86a8e6" stroke-width="2"/>
+        <path d="M67 249H85M76 240V258" stroke="#245bdb" stroke-width="2"/>
+        <g fill="#68768a" font-family="sans-serif" font-size="13"><text x="120" y="33">理解需求</text><text x="192" y="222">人机协作</text><text x="182" y="304">完成交付</text></g>
+      </svg>
+    </div>
+    <div class="case-trail"><span>猎头招聘<small>完整展开方法</small></span><span>达人营销<small>验证方法迁移</small></span></div>
+  </section>
+
+  <section class="slide case-opening module-opening" id="page-06" aria-labelledby="title-06">
+    <header class="page-header"><strong><span class="module-number">04</span>核心案例 · 猎头招聘</strong><span>案例一 / 完整业务流程</span></header>
     <div class="page-body">
       <p class="kicker">从完整业务流程，看 AI 如何融入招聘交付</p>
-      <h2 id="title-04">案例一：猎头招聘</h2>
+      <h2 id="title-06">案例一：猎头招聘</h2>
       <p class="lead">从见客户前的预研，到推荐、面试、入职与收款，沿着完整业务流程确定人与 AI 的分工。</p>
       <div class="case-layout">
         <aside class="case-brief"><span class="small-label">业务角色</span><h3>项目负责人<br>与交付团队协作</h3><dl><div><dt>项目负责人</dt><dd>理解客户需求、审核人选、对接客户并确认推荐</dd></div><div><dt>交付团队</dt><dd>寻找并提交人选、沟通录用条件、跟进入职</dd></div></dl><p>业务沟通群沟通，共享文档沉淀资料；AI 助手 辅助分析，录音工具保留访谈信息。</p></aside>
@@ -522,38 +624,38 @@
       </div>
       <div class="callout"><strong>业务难点</strong><span>需求和人选信息持续变化，负责人需要反复理解、判断、同步，并安排下一步工作。</span></div>
     </div>
-    <footer class="page-footer"><span></span><span class="page-number">04 / 13</span></footer>
+    <footer class="page-footer"><span class="page-takeaway"><b>本页要点</b>先看清完整业务，再确定哪些任务交给 AI、哪些判断留给人。</span><span class="page-number">06 / 16</span></footer>
   </section>
 
-  <section class="slide compact-table" id="page-05" aria-labelledby="title-05">
-    <header class="page-header"><strong><span class="module-number">03</span>核心案例 · 猎头招聘</strong><span>案例一 / 核心 AI 功能</span></header>
+  <section class="slide compact-table" id="page-07" aria-labelledby="title-07">
+    <header class="page-header"><strong><span class="module-number">04</span>核心案例 · 猎头招聘</strong><span>案例一 / 核心 AI 功能</span></header>
     <div class="page-body">
       <p class="kicker">核心 AI 功能 / 需求预研与客户沟通</p>
-      <h2 id="title-05">从了解客户，到形成清晰的找人标准</h2>
+      <h2 id="title-07">从了解客户，到形成清晰的找人标准</h2>
       <p class="lead">围绕需求理解与找人标准，精选核心 AI 功能。每个 Agent 都是一位职责明确的 AI 助手。</p>
-      <div class="table-wrap" tabindex="0" role="region" aria-label="任务表，可横向滚动"><table class="agent-table" aria-label="需求预研、客户沟通和需求拆解的 Agent 分工"><thead><tr><th scope="col">业务任务</th><th scope="col">Agent 名称</th><th scope="col">Agent 的作用</th></tr></thead><tbody><tr><td>客户与岗位预研</td><td>需求预研助手</td><td>结合客户 PPT 和职位资料，整理业务背景、用人方向与需要进一步确认的问题。</td></tr><tr><td>准备客户沟通材料</td><td>访谈准备助手</td><td>把预研结果整理成沟通提纲与访谈手册，帮助 项目负责人 有重点地了解客户。</td></tr><tr><td>整理客户会议纪要</td><td>会议纪要助手</td><td>提炼会议结论与待确认事项，形成客户侧的沟通记录，供 项目负责人 核对。</td></tr><tr><td>整理交付所需的客户信息</td><td>客户档案助手</td><td>汇总客户背景与业务信息，形成交付团队查阅和理解项目的资料。</td></tr><tr><td>形成岗位找人说明书</td><td>找人标准助手</td><td>把职位要求和确认后的判断整理成找人标准，在共享文档中供交付团队使用。</td></tr></tbody></table></div>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="任务表，可横向滚动"><table class="agent-table" aria-label="需求预研、客户沟通和需求拆解的 Agent 分工"><thead><tr><th scope="col">业务任务</th><th scope="col">Agent 名称</th><th scope="col">Agent 的作用</th></tr></thead><tbody><tr><td>客户与岗位预研</td><td>需求预研助手</td><td>结合客户与职位资料，提炼业务背景、用人方向及待确认问题。</td></tr><tr><td>准备客户沟通材料</td><td>访谈准备助手</td><td>将预研结果整理为沟通提纲与访谈手册。</td></tr><tr><td>整理客户会议纪要</td><td>会议纪要助手</td><td>提炼会议结论与待确认事项，交项目负责人核对。</td></tr><tr><td>整理交付所需的客户信息</td><td>客户档案助手</td><td>汇总客户背景与业务信息，形成交付团队共用的客户档案。</td></tr><tr><td>形成岗位找人说明书</td><td>找人标准助手</td><td>将已确认的岗位要求整理为团队共用的找人说明书。</td></tr></tbody></table></div>
       <div class="callout"><strong>交付衔接</strong><span>客户侧留下清楚的会议结论，交付侧拿到客户背景与找人说明书，围绕同一套标准开展工作。</span></div>
     </div>
-    <footer class="page-footer"><span></span><span class="page-number">05 / 13</span></footer>
+    <footer class="page-footer"><span class="page-takeaway"><b>本页要点</b>把客户需求转成统一标准，团队才能朝同一个方向找人。</span><span class="page-number">07 / 16</span></footer>
   </section>
 
-  <section class="slide compact-table" id="page-06" aria-labelledby="title-06">
-    <header class="page-header"><strong><span class="module-number">03</span>核心案例 · 猎头招聘</strong><span>案例一 / 核心 AI 功能</span></header>
+  <section class="slide compact-table" id="page-08" aria-labelledby="title-08">
+    <header class="page-header"><strong><span class="module-number">04</span>核心案例 · 猎头招聘</strong><span>案例一 / 核心 AI 功能</span></header>
     <div class="page-body">
       <p class="kicker">核心 AI 功能 / 人选评估与项目复盘</p>
-      <h2 id="title-06">从简历评估，到推荐、面试与项目复盘</h2>
+      <h2 id="title-08">从简历评估，到推荐、面试与项目复盘</h2>
       <p class="lead">找人标准明确后，核心 AI 功能集中在人选评估、推荐材料、面试报告与项目复盘。</p>
-      <div class="table-wrap" tabindex="0" role="region" aria-label="任务表，可横向滚动"><table class="agent-table" aria-label="人选评估、推荐、面试与项目复盘的核心 AI 功能"><thead><tr><th scope="col">业务任务</th><th scope="col">Agent 名称</th><th scope="col">Agent 的作用</th></tr></thead><tbody><tr><td>判断候选人是否匹配</td><td>简历评估助手</td><td>结合找人标准分析顾问提交的简历，列出匹配点、疑问与需要补充的沟通。</td></tr><tr><td>准备客户推荐材料</td><td>推荐材料助手</td><td>汇总候选人的匹配理由和关键信息，形成推荐草稿，供 项目负责人 审核后发送。</td></tr><tr><td>整理面试报告</td><td>面试报告助手</td><td>读取面试录音及转写内容，结合岗位要求整理回答要点、能力表现与待确认问题，生成面试报告。</td></tr><tr><td>沉淀项目经验</td><td>项目复盘助手</td><td>汇总人工修正、客户偏好和招聘结果，提出可复用的经验与方法更新建议。</td></tr></tbody></table></div>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="任务表，可横向滚动"><table class="agent-table" aria-label="人选评估、推荐、面试与项目复盘的核心 AI 功能"><thead><tr><th scope="col">业务任务</th><th scope="col">Agent 名称</th><th scope="col">Agent 的作用</th></tr></thead><tbody><tr><td>判断候选人是否匹配</td><td>简历评估助手</td><td>对照找人标准，列出简历匹配点、疑问与待补充信息。</td></tr><tr><td>准备客户推荐材料</td><td>推荐材料助手</td><td>汇总匹配理由与关键信息，生成供项目负责人审核的推荐草稿。</td></tr><tr><td>整理面试报告</td><td>面试报告助手</td><td>依据面试录音与岗位要求，生成含回答要点、能力表现和疑问的报告。</td></tr><tr><td>沉淀项目经验</td><td>项目复盘助手</td><td>汇总人工修正、客户偏好与招聘结果，提炼可复用的方法。</td></tr></tbody></table></div>
       <div class="callout"><strong>业务人员负责</strong><span>项目负责人审核推荐、对接客户；面试过程保留录音，供 AI 生成报告；交付团队负责录用条件沟通与入职跟进。</span></div>
     </div>
-    <footer class="page-footer"><span></span><span class="page-number">06 / 13</span></footer>
+    <footer class="page-footer"><span class="page-takeaway"><b>本页要点</b>AI 承担分析与材料整理，业务人员负责推荐和关键判断。</span><span class="page-number">08 / 16</span></footer>
   </section>
 
-  <section class="slide " id="page-07" aria-labelledby="title-07">
-    <header class="page-header"><strong><span class="module-number">03</span>核心案例 · 猎头招聘</strong><span>案例一 / 项目档案</span></header>
+  <section class="slide " id="page-09" aria-labelledby="title-09">
+    <header class="page-header"><strong><span class="module-number">04</span>核心案例 · 猎头招聘</strong><span>案例一 / 项目档案</span></header>
     <div class="page-body">
       <p class="kicker">连接各位助手 / 共用同一份项目档案</p>
-      <h2 id="title-07">让 AI 看见整个招聘项目，而不只是一份简历</h2>
+      <h2 id="title-09">让 AI 看见整个招聘项目，而不只是一份简历</h2>
       <p class="lead">这些助手要配合完成同一个招聘项目，就需要共用客户背景、找人标准、候选人记录和反馈。项目档案把这些信息关联起来。</p>
 
       <div class="context-map" aria-label="招聘项目与客户、岗位、候选人、反馈之间的联系">
@@ -563,14 +665,14 @@
       </div>
       <div class="example-note"><strong>例如：客户拒绝了一位候选人</strong><p>需要区分：是这个人不合适，还是整个岗位的寻找方向要变？先把反馈关联到具体人和项目，再由负责人判断，避免把一次拒绝变成错误的通用标准。</p></div>
     </div>
-    <footer class="page-footer"><span></span><span class="page-number">07 / 13</span></footer>
+    <footer class="page-footer"><span class="page-takeaway"><b>本页要点</b>把零散资料关联到同一个项目，AI 才能理解完整的业务背景。</span><span class="page-number">09 / 16</span></footer>
   </section>
 
-  <section class="slide " id="page-08" aria-labelledby="title-08">
-    <header class="page-header"><strong><span class="module-number">03</span>核心案例 · 猎头招聘</strong><span>案例一 / 主动协作</span></header>
+  <section class="slide " id="page-10" aria-labelledby="title-10">
+    <header class="page-header"><strong><span class="module-number">04</span>核心案例 · 猎头招聘</strong><span>案例一 / 主动协作</span></header>
     <div class="page-body">
       <p class="kicker">沉淀业务经验 / 让 AI 主动推进</p>
-      <h2 id="title-08">把业务经验沉淀下来，让 AI 主动做事</h2>
+      <h2 id="title-10">把业务经验沉淀下来，让 AI 主动做事</h2>
       <p class="lead">有了完整的项目档案，再把负责人脑中的判断依据、工作顺序和交接要求沉淀下来。AI 才能结合项目背景，知道何时行动、做什么、什么时候请人确认。</p>
 
       <div class="action-layout">
@@ -583,36 +685,46 @@
         <aside class="exception-notes"><article><span class="small-label">将业务经验转为共享方法</span><h3>判断的依据</h3><p>客户真正看重什么、过往人选为何被接受或拒绝、哪些要求必须满足。</p></article><article><span class="small-label">将业务经验转为共享方法</span><h3>推进的规则</h3><p>什么情况开始分析、缺资料找谁、哪些结果需要审核、确认后怎样继续。</p></article></aside>
       </div><div class="callout"><strong>负责人的工作重心</strong><span>从反复解释背景、逐项安排任务，转向客户沟通、关键判断和例外处理。</span></div>
     </div>
-    <footer class="page-footer"><span></span><span class="page-number">08 / 13</span></footer>
+    <footer class="page-footer"><span class="page-takeaway"><b>本页要点</b>把经验变成共享方法，让负责人从反复协调转向关键决策。</span><span class="page-number">10 / 16</span></footer>
   </section>
 
-  <section class="slide compact-table" id="page-09" aria-labelledby="title-09">
-    <header class="page-header"><strong><span class="module-number">03</span>核心案例 · 猎头招聘</strong><span>案例一 / 提效目标</span></header>
+  <section class="slide compact-table" id="page-11" aria-labelledby="title-11">
+    <header class="page-header"><strong><span class="module-number">04</span>核心案例 · 猎头招聘</strong><span>案例一 / 提效成果</span></header>
     <div class="page-body">
-      <p class="kicker">提效目标与持续顾问服务</p>
-      <h2 id="title-09">让招聘提效有数字可衡量</h2>
-      <p class="lead">围绕同类招聘任务，设定时间、质量和交付衔接三项改善目标。把人工审核计入用时，让节省的时间与交付质量一起接受检验。</p>
+      <p class="kicker">提效成果与持续顾问服务</p>
+      <h2 id="title-11">让招聘提效有数字可衡量</h2>
+      <p class="lead">围绕整理协调、分析质量与交付衔接，记录招聘工作中的变化；持续跟踪人工审核与修正投入，衡量真实交付效果。</p>
 
-      <div class="outcome-grid" aria-label="招聘交付的三项改善目标">
-        <article><h3>整理与协调用时</h3><p class="outcome-value"><span>目标减少</span>40<small>%</small></p><p>减少搬运材料、解释背景与安排任务的投入。</p></article>
-        <article><h3>分析返工次数</h3><p class="outcome-value"><span>目标减少</span>30<small>%</small></p><p>让分析依据更完整，减少遗漏与反复修改。</p></article>
-        <article><h3>任务衔接等待时间</h3><p class="outcome-value"><span>目标减少</span>50<small>%</small></p><p>资料提交、补充与审核后，及时接续下一步。</p></article>
+      <div class="outcome-grid" aria-label="招聘交付的三项提效成果">
+        <article><h3>整理与协调用时</h3><p class="outcome-value"><span>减少</span>40<small>%</small></p><p>减少搬运材料、解释背景与安排任务的投入。</p></article>
+        <article><h3>分析返工次数</h3><p class="outcome-value"><span>减少</span>30<small>%</small></p><p>让分析依据更完整，减少遗漏与反复修改。</p></article>
+        <article><h3>任务衔接等待时间</h3><p class="outcome-value"><span>减少</span>50<small>%</small></p><p>资料提交、补充与审核后，及时接续下一步。</p></article>
       </div>
-      <div class="table-wrap" tabindex="0" role="region" aria-label="数据表，可横向滚动"><table aria-label="招聘交付的改善目标与衡量方式"><thead><tr><th scope="col">关注维度</th><th scope="col">改善目标</th><th scope="col">衡量方式</th></tr></thead><tbody>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="数据表，可横向滚动"><table aria-label="招聘交付的关注维度与衡量方式"><thead><tr><th scope="col">关注维度</th><th scope="col">改善方向</th><th scope="col">衡量方式</th></tr></thead><tbody>
         <tr><td>负责人的时间</td><td>减少整理与协调投入，保留关键判断</td><td>按同类任务对比人均用时，计入审核与修正时间</td></tr>
         <tr><td>分析的质量</td><td>减少遗漏与返工，保持判断有依据</td><td>记录每份分析的返工次数、信息遗漏和判断错误</td></tr>
         <tr><td>交付的连续性</td><td>减少交接等待，及时接续任务</td><td>对比资料提交或审核完成至下一步启动的等待时长</td></tr>
       </tbody></table></div>
       <div class="callout"><strong>持续顾问服务</strong><span>定期复盘业务效果，优化 AI 助手与共享方法，并随岗位、客户需求和业务变化，持续提供改进建议与落地支持。</span></div>
     </div>
-    <footer class="page-footer"><span></span><span class="page-number">09 / 13</span></footer>
+    <footer class="page-footer"><span class="page-takeaway"><b>本页要点</b>提效要同时看时间、质量与交付衔接，并通过顾问服务持续改善。</span><span class="page-number">11 / 16</span></footer>
   </section>
 
-  <section class="slide case-opening module-opening creator-case" id="page-10" aria-labelledby="title-10">
-    <header class="page-header"><strong><span class="module-number">03</span>核心案例 · 达人营销</strong><span>案例二 / 从需求确认到达人审核</span></header>
+  <section class="slide transition-page case-bridge" id="page-12" aria-labelledby="title-12">
+    <p class="transition-label">从一个案例，走向更多业务</p>
+    <h2 id="title-12">业务场景不同，<br><em>同一套方法依然适用。</em></h2>
+    <div class="method-transfer" aria-label="同一套方法连接猎头招聘与达人营销">
+      <div class="transfer-business"><strong>猎头招聘</strong><p>确认岗位需求<br>寻找、评估与推荐人选</p></div>
+      <div class="transfer-line"><span>共享上下文 · 人机协作</span></div>
+      <div class="transfer-business"><strong>达人营销</strong><p>确认营销需求<br>寻找、审核与推荐达人</p></div>
+    </div>
+  </section>
+
+  <section class="slide case-opening module-opening creator-case" id="page-13" aria-labelledby="title-13">
+    <header class="page-header"><strong><span class="module-number">04</span>核心案例 · 达人营销</strong><span>案例二 / 从需求确认到达人审核</span></header>
     <div class="page-body">
       <p class="kicker">同一套方法，应用于另一种业务</p>
-      <h2 id="title-10">案例二：达人营销</h2>
+      <h2 id="title-13">案例二：达人营销</h2>
       <p class="case-thesis">需求确认后，让寻找、审核与反馈自然衔接</p>
 
       <ol class="creator-workflow" aria-label="需求确认、达人寻找与提交、Agent 审核反馈三个环节">
@@ -629,14 +741,14 @@
         </div>
       </div>
     </div>
-    <footer class="page-footer"><span></span><span class="page-number">10 / 13</span></footer>
+    <footer class="page-footer"><span class="page-takeaway"><b>本页要点</b>角色、标准和进度清楚，需求确认、人员交付与 AI 审核才能自然衔接。</span><span class="page-number">13 / 16</span></footer>
   </section>
 
-  <section class="slide module-opening" id="page-11" aria-labelledby="title-11">
-    <header class="page-header"><strong><span class="module-number">04</span>企业如何落地</strong><span>企业 AI 提效 · 方案与案例</span></header>
+  <section class="slide module-opening" id="page-14" aria-labelledby="title-14">
+    <header class="page-header"><strong><span class="module-number">05</span>企业如何落地</strong><span>企业 AI 提效 · 方案与案例</span></header>
     <div class="page-body">
       <p class="kicker">看清全局，分阶段实施</p>
-      <h2 id="title-11">企业如何落地？</h2>
+      <h2 id="title-14">企业如何落地？</h2>
       <p class="lead">先确定企业要改善的交付，再选择相关部门与任务进入试点，逐步建立共享资料和工作方法。</p>
 
       <div class="timeline">
@@ -646,14 +758,14 @@
         <article class="stage"><span class="stage-number">04 / 持续改进</span><h3>让经验回到团队</h3><p>记录真实使用、人工修正与结果，改进共享方法，再决定扩展范围。</p><p class="stage-result">形成：复盘与改进记录</p></article>
       </div><div class="callout"><strong>企业如何参与</strong><span>由负责人明确目标，一线人员提供真实材料并参与试用，共同确认哪些改进值得继续。</span></div><p class="note">时间、人员投入和实施范围，依据组织现状与试点目标确定。</p>
     </div>
-    <footer class="page-footer"><span></span><span class="page-number">11 / 13</span></footer>
+    <footer class="page-footer"><span class="page-takeaway"><b>本页要点</b>从业务全局选准一个环节，做出效果，再逐步扩展。</span><span class="page-number">14 / 16</span></footer>
   </section>
 
-  <section class="slide module-opening" id="page-12" aria-labelledby="title-12">
-    <header class="page-header"><strong><span class="module-number">05</span>实施前需要明确的几个问题</strong><span>企业 AI 提效 · 方案与案例</span></header>
+  <section class="slide module-opening" id="page-15" aria-labelledby="title-15">
+    <header class="page-header"><strong><span class="module-number">06</span>实施前需要明确的几个问题</strong><span>企业 AI 提效 · 方案与案例</span></header>
     <div class="page-body">
       <p class="kicker">人员分工、现有工具、结果审核与资料管理</p>
-      <h2 id="title-12">实施前需要明确的几个问题</h2>
+      <h2 id="title-15">实施前需要明确的几个问题</h2>
       <p class="lead">把职责、可执行范围和确认方式讲清楚，再逐步扩大助手能够承担的工作。</p>
 
       <div class="grid-2 space-top">
@@ -665,14 +777,14 @@
         <article class="faq"><h3>谁维护资料和共享方法？</h3><p>明确业务负责人和更新责任。员工可以提出改进，经确认后共同使用，并通过实际任务检验效果。</p></article>
       </div>
     </div>
-    <footer class="page-footer"><span></span><span class="page-number">12 / 13</span></footer>
+    <footer class="page-footer"><span class="page-takeaway"><b>本页要点</b>把分工、权限与审核责任讲清楚，团队才能放心使用 AI。</span><span class="page-number">15 / 16</span></footer>
   </section>
 
-  <section class="slide module-opening" id="page-13" aria-labelledby="title-13">
-    <header class="page-header"><strong><span class="module-number">06</span>如何开始合作</strong><span>从业务梳理到试点方向</span></header>
+  <section class="slide module-opening" id="page-16" aria-labelledby="title-16">
+    <header class="page-header"><strong><span class="module-number">07</span>如何开始合作</strong><span>从业务梳理到试点方向</span></header>
     <div class="page-body">
       <p class="kicker">从一次业务梳理开始</p>
-      <h2 id="title-13">如何开始合作？</h2>
+      <h2 id="title-16">如何开始合作？</h2>
       <p class="lead">从一项想改善的业务开始，一起看清当前的工作方式，明确值得优先投入的环节。</p>
 
       <div class="pilot-layout">
@@ -685,7 +797,7 @@
       </div>
       <div class="callout"><strong>持续顾问服务</strong><span>从一个业务环节开始，通过持续复盘与优化，把有效的方法逐步用到更多工作中。</span></div>
     </div>
-    <footer class="page-footer"><span></span><span class="page-number">13 / 13</span></footer>
+    <footer class="page-footer"><span class="page-takeaway"><b>本页要点</b>从一次业务梳理开始，明确试点，再以持续顾问服务扩大成效。</span><span class="page-number">16 / 16</span></footer>
   </section>
   </main>
 </body>
